@@ -6,6 +6,8 @@
     <title>Pale</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Noto+Serif:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -26,6 +28,13 @@
         .mobile-menu.active {
             transform: translateX(0);
         }
+        .swiper-pagination-bullet {
+            background-color: transparent;
+            opacity: 1;
+        }
+        .swiper-pagination-bullet-active {
+            background-color: black !important;
+        }
     </style>
 </head>
 <body class="font-sora ">
@@ -38,8 +47,8 @@
 
             <!-- Navigation Links (Desktop) -->
             <div class="hidden md:flex items-center space-x-8">
-                <a href="#features" class="text-black hover:text-black transition-colors text-[16px]">Features</a>
-                <a href="#use-cases" class="text-black hover:text-black transition-colors text-[16px]">Use Cases</a>
+                <a href="#features" class="text-black hover:text-black transition-colors">Features</a>
+                <a href="#use-cases" class="text-black hover:text-black transition-colors">Use Cases</a>
                 <a href="#about" class="text-black hover:text-black transition-colors text-[16px]">About</a>
                 <a href="#pricing" class="text-black hover:text-black transition-colors text-[16px]">Pricing</a>
             </div>
@@ -138,15 +147,15 @@
                         <div class="space-y-6">
                             <h3 class="text-[18px] font-bold text-[#2D0F00]">How it works:</h3>
                             <div class="flex items-start gap-4">
-                                <span class="flex items-center justify-center w-8 h-8 rounded-full bg-[#fbe3d6] font-medium text-[16px] min-h-8">1</span>
+                                <span class="flex items-center justify-center w-8 h-8 rounded-full bg-[#F5B899] font-medium text-[16px] min-h-8">1</span>
                                 <p class="text-lg">Type @ to see available tools</p>
                             </div>
                             <div class="flex items-start gap-4">
-                                <span class="flex items-center justify-center w-8 h-8 rounded-full bg-[#fbe3d6] font-medium text-[16px]">2</span>
+                                <span class="flex items-center justify-center w-8 h-8 rounded-full bg-[#F5B899] font-medium text-[16px]">2</span>
                                 <p class="text-lg">Tool chips appear as you @mention them</p>
                             </div>
                             <div class="flex items-start gap-4">
-                                <span class="flex items-center justify-center w-8 h-8 rounded-full bg-[#fbe3d6] font-medium text-[16px]">3</span>
+                                <span class="flex items-center justify-center w-8 h-8 rounded-full bg-[#F5B899] font-medium text-[16px]">3</span>
                                 <p class="text-lg">Each tool has default permission settings</p>
                             </div>
                         </div>
@@ -159,7 +168,417 @@
                 </div>
             </div>
         </section>
+                 <!-- Stay in charge section -->
+         <section class="py-8">
+             <div class="max-w-full mx-auto">
+                 <div class="flex flex-col lg:flex-row items-center">
+                     <!-- Content Left -->
+                     <div class="w-full lg:w-1/2 px-8 sm:px-12 md:px-16 lg:px-32 order-1 lg:order-2">
+                        <div class="inline-flex items-center gap-2 bg-[#2D0F00] px-4 py-1.5 rounded-full text-white text-[14px] mb-6">
+                            FEATURE 2
+                        </div>
+                        <h2 class="text-[48px] sm:text-[44px] lg:text-[40px] font-semibold leading-tight mb-6 font-sora">
+                            Stay in charge
+                        </h2>
+                        <p class="text-gray-600 text-[18px] mb-8 font-noto-serif sm:pr-8 lg:pr-0">
+                            You choose Allow once, Always allow, or Deny for each action. Never worry about AI overstepping boundaries.
+                        </p>
+                        
+                        <!-- Features list -->
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <span class="flex items-center justify-center w-[48px] h-[48px] rounded-full bg-[#F5B899] min-h-[48px]">
+                                    <img src="./images/control.svg" class="w-[24px] h-[24px]"/>
+                                </span>
+                                <div>
+                                    <h3 class="text-[18px] font-semibold mb-1">Granular Control</h3>
+                                    <p class="text-gray-600 font-noto-serif">Permission requests appear whenever the AI needs to perform a write action.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span class="flex items-center justify-center w-[48px] h-[48px] rounded-full bg-[#F5B899]">
+                                    <img src="./images/memory.svg" class="w-[24px] h-[24px]"/>
+                                </span>
+                                <div>
+                                    <h3 class="text-[18px] font-semibold mb-1">Permission Memory</h3>
+                                    <p class="text-gray-600 font-noto-serif">"Always allow" remembers your preferences for future interactions.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span class="flex items-center justify-center w-[48px] h-[48px] rounded-full bg-[#F5B899]">
+                                    <img src="./images/actions.svg" />
+                                </span>
+                                <div>
+                                    <h3 class="text-[18px] font-semibold mb-1">Transparent Actions</h3>
+                                    <p class="text-gray-600 font-noto-serif">Clear visual cues show exactly what actions the AI is requesting.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
+                    <!-- Image Left -->
+                    <div class="w-full lg:w-1/2 flex justify-start order-2 lg:order-1 mt-8 lg:mt-0">
+                        <img src="./images/section-3.png" class="w-auto h-auto mx-auto "/>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- permissions section -->
+        <section class="py-8">
+            <div class="max-w-full mx-auto">
+                <div class="flex flex-col lg:flex-row items-center">
+                    <!-- Content Left -->
+                    <div class="w-full lg:w-1/2 px-8 sm:px-12 md:px-16 lg:px-32">
+                        <div class="inline-flex items-center gap-2 bg-[#2D0F00] px-4 py-1.5 rounded-full text-white text-[14px] mb-6">
+                            FEATURE 3
+                        </div>
+                        <h2 class="text-[48px] sm:text-[44px] lg:text-[40px] font-semibold leading-tight mb-6 font-sora">
+                            Update permissions <br/> for each prompt
+                        </h2>
+                        <p class="text-gray-600 text-[18px] mb-8 font-noto-serif sm:pr-8 lg:pr-0">
+                            Any time, click a tool chip to view and change what's allowed. The AI can only use the tools you make available
+                        </p>
+                        
+                        <div class="space-y-6">
+                                                         <div class="flex items-start gap-4">
+                                <span class="flex items-center justify-center w-[48px] h-[48px] rounded-full bg-[#F5B899] min-h-[48px]">
+                                    <img src="./images/access.svg" class="w-[24px] h-[24px]"/>
+                                </span>
+                                <div>
+                                    <h3 class="text-[18px] font-semibold mb-1">Contextual Access</h3>
+                                    <p class="text-gray-600 font-noto-serif">Different prompts may require different tool permissions. Adjust on the fly.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span class="flex items-center justify-center w-[48px] h-[48px] rounded-full bg-[#F5B899]">
+                                    <img src="./images/one-click.svg" class="w-[24px] h-[24px]"/>
+                                </span>
+                                <div>
+                                    <h3 class="text-[18px] font-semibold mb-1">One-Click Removal</h3>
+                                    <p class="text-gray-600 font-noto-serif">Remove tools that aren't needed for a specific task with a single click.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span class="flex items-center justify-center w-[48px] h-[48px] rounded-full bg-[#F5B899]">
+                                    <img src="./images/fast.svg"/>
+                                </span>
+                                <div>
+                                    <h3 class="text-[18px] font-semibold mb-1">Fast Permission Updates</h3>
+                                    <p class="text-gray-600 font-noto-serif">Quickly toggle between Allow, Ask, or Deny for any action without interrupting your workflow.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image Right -->
+                    <div class="w-full md:w-1/2 flex justify-end">
+                        <img src="./images/section-2.png" class="w-auto h-auto max-w-full"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Apps Integration Section -->
+<section class="w-full  flex items-center justify-center my-12">
+    <div class="container bg-[#F5B899] py-16 px-4 rounded-3xl mx-auto text-center">
+      
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 bg-[#FFFFFF66] text-[#542208] text-[16px] font-medium px-4 py-2 rounded-full mb-6">
+        <span class="text-lg p-2 rounded-full border border-white border-[1px]"><img src="./images/ai-agent.svg" alt="bus icon"></span>
+        Connect with ease
+      </div>
+  
+      <!-- Heading -->
+      <h2 class="text-[48px] md:text-4xl font-medium text-black">
+        Add your favourite <br class="hidden md:block" />
+        <span class="font-medium"><strong>100+</strong> Apps</span>
+      </h2>
+  
+      <!-- Logos row -->
+     <div class="mt-10 flex flex-wrap justify-center gap-6">
+        <!-- Logo item -->
+        <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
+          <img src="./images/icon1.svg" alt="icon1" class="w-[38px] h-[38px]">
+        </div>
+        <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
+          <img src="./images/icon2.svg" alt="icon" class="w-[38px] h-[38px]">
+        </div>
+        <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
+          <img src="./images/icon3.svg" alt="icon" class="w-[38px] h-[38px]">
+        </div>
+        <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
+          <img src="./images/icon4.svg" alt="icon" class="w-[38px] h-[38px]">
+        </div>
+        <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
+          <img src="./images/icon5.svg" alt="icon" class="w-[38px] h-[38px]">
+        </div>
+        <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
+          <img src="./images/icon6.svg" alt="icon" class="w-[38px] h-[38px]">
+        </div>
+        <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
+          <img src="./images/icon7.svg" alt="icon" class="w-[38px] h-[38px]">
+        </div>
+        <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
+          <img src="./images/icon8.svg" alt="icon" class="w-[38px] h-[38px]">
+        </div>
+        <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
+          <img src="./images/icon9.svg" alt="icon" class="w-[38px] h-[38px]">
+        </div>
+        <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
+          <img src="/images/icon10.svg" alt="icon" class="w-[38px] h-[38px]">
+        </div>
+        <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
+          <img src="./images/icon11.svg" alt="icon" class="w-[38px] h-[38px]">
+        </div>
+        <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
+          <img src="./images/icon12.svg" alt="icon" class="w-[38px] h-[38px]">
+        </div>
+        <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
+          <img src="./images/icon13.svg" alt="icon" class="w-[38px] h-[38px]">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Full-width Card Slider -->
+ <section class="w-full bg-[#FFEADF] flex items-center justify-center">
+
+
+    <section class="py-10 container">
+        <div class=" flex items-center justify-between w-full my-16 px-4">
+             <h2 class="text-[48px] md:text-5xl text-black font-medium " style="letter-spacing: -1.5px;">Trusted by <br> product Lovers</h2>
+             <div class=" flex flex-col gap-2"><p class=" text-black text-base font-medium">Pale is built on the core habits of top-performing <br>product teams: staying focused, moving fast, and <br> delivering exceptional work.</p>
+            <button class="bg-white font-bold text-base text-black px-1 py-2 rounded w-[300px]">Read our Customer Stories →</button>
+            </div>
+        </div>
+             <div id="cards-swiper" class="swiper relative w-full" 
+            style="--swiper-theme-color:#000; --swiper-navigation-size:16px;">
+         <div class="swiper-wrapper">
+     
+           <!-- Slide 1 -->
+           <div class="swiper-slide px-4">
+             <article class="rounded-[24px] overflow-hidden bg-white border-2 border-black shadow-[0_0_0_4px_rgba(0,0,0,1)] transition-all duration-300">
+               <img src="./images/slide1.png" alt="Alex Chen" class="w-full aspect-[4/3] object-cover">
+               <div class="p-8">
+                 <p class="text-[18px] font-medium mb-6">
+                   Thanks to Pale, we're uncovering new leads we never could have found through traditional legal channels.
+                 </p>
+                 <div>
+                   <p class="font-semibold">Alex Chen</p>
+                   <p class="text-gray-600">Operations Director</p>
+                 </div>
+               </div>
+             </article>
+           </div>
+     
+           <!-- Slide 2 -->
+           <div class="swiper-slide px-4">
+             <article class="rounded-[24px] overflow-hidden bg-white border-2 border-[#F5B899] shadow-[0_0_0_4px_rgba(245,184,153,1)]">
+               <img src="./images/slide2.png" alt="Ben Carter" class="w-full aspect-[4/3] object-cover grayscale">
+               <div class="p-8">
+                 <p class="text-[18px] font-medium mb-6">
+                   Running in Founder Mode is challenging enough without a truly great project management app.
+                 </p>
+                 <div>
+                   <p class="font-semibold">Ben Carter</p>
+                   <p class="text-gray-600">Marketing Lead</p>
+                 </div>
+               </div>
+             </article>
+           </div>
+     
+           <!-- Slide 3 -->
+           <div class="swiper-slide px-4">
+             <article class="rounded-[24px] overflow-hidden bg-white border-2 border-[#F5B899] shadow-[0_0_0_4px_rgba(245,184,153,1)]">
+               <img src="./images/slide3.png" alt="Cameron Wil" class="w-full aspect-[4/3] object-cover grayscale">
+               <div class="p-8">
+                 <p class="text-[18px] font-medium mb-6">
+                   Founder Mode is tough—having an exceptional project management app makes all the difference.
+                 </p>
+                 <div>
+                   <p class="font-semibold">Cameron Wil</p>
+                   <p class="text-gray-600">Product Manager</p>
+                 </div>
+               </div>
+             </article>
+           </div>
+         </div>
+     
+         <!-- Controls bar -->
+         <div class="flex items-center justify-between mt-12">
+           <!-- Dots -->
+           <div class="swiper-pagination !static !w-auto flex items-center"></div>
+       
+           <!-- Arrows -->
+           <div class="flex items-center gap-3">
+             <button class="swiper-button-prev !static !w-8 !h-8 !bg-white border border-black rounded-full flex items-center justify-center after:!text-xs hover:bg-gray-50"><img src="./images/left.svg"/></button>
+             <button class="swiper-button-next !static !w-8 !h-8 !bg-white border border-black rounded-full flex items-center justify-center after:!text-xs hover:bg-gray-50"><img src="./images/right.svg"/></button>
+           </div>
+         </div>
+      </div>
+    </section>
+        </section>
+
+        <!-- Plans Section -->
+<section class="bg-[#fff8f5] h-auto flex flex-col items-center justify-center py-4 md:py-8 font-sora">
+  <h2 class="text-[48px] md:text-3xl font-medium  mb-2 text-center" style="letter-spacing: -1.5px;">Plans that grow with you</h2>
+  <p class="text-gray-400 text-center text-[18px] font-noto-serif md:text-base">Empower your team for free. Upgrade to unlock the full potential of Pale with <br class="hidden md:block"> unlimited issues, advanced security, and exclusive features.</p>
+
+  <!-- Toggle Tabs -->
+<div class="tabs">
+<div class="flex mt-5">
+  <ul class="flex bg-[#F5B8994D] rounded-full transition-all duration-300 px-0 overflow-hidden">
+    <li>
+      <a href="javascript:void(0)" class="inline-block py-2 px-2 text-[#542208] hover:text-[#3d1906] bg-[#D9D9D966] border border-white border-[1px] rounded-full font-medium tab-active:bg-white tab-active:rounded-xl tab-active:text-[#542208] tablink whitespace-nowrap" data-tab="tabs-with-background-1" role="tab">Individual</a>
+    </li>
+    <li>
+      <a href="javascript:void(0)" class="inline-block py-2 px-2 text-[#542208] hover:text-[#3d1906] font-medium tab-active:bg-white tab-active:rounded-xl tab-active:text-[#542208] tablink whitespace-nowrap" data-tab="tabs-with-background-2" role="tab">Team & Enterprise</a>
+    </li>
+  </ul>
+</div>
+</div>
+
+  <!-- Plans Cards -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-8 md:mt-12 w-full max-w-6xl px-4">
+      <!-- Free Plan (Left Card) -->
+      <div class="bg-[#fef2ed] p-6 rounded-2xl text-left border border-gray-300 flex flex-col items-start h-full">
+          <div>
+              <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-1">Free</h3>
+              <p class="text-gray-500 text-sm mb-1">Try Pale</p>
+              <p class="text-2xl md:text-3xl font-bold text-[#2D0F00] mb-4">$0<span class="text-sm font-normal text-gray-600"> / month billed annually</span></p>
+              <button class="bg-white text-[#2D0F00] w-full my-4 px-6 py-2 text-center rounded-full font-medium text-left hover:bg-gray-100 transition duration-300">Get a Free plan</button>
+              <ul class="space-y-2 flex flex-col gap-1 text-gray-700 mb-6">
+                  <li class="flex items-start font-medium text-sm"><span class="w-4 h-2 mr-1 text-[#2D0F00] text-sm font-bold">✓</span> Chat on web, iOS, and Android</li>
+                  <li class="flex items-start font-medium text-sm"><span class="w-4 h-2 mr-1 text-[#2D0F00] text-sm font-bold">✓</span> Generate code and visualize data</li>
+                  <li class="flex items-start font-medium text-sm"><span class="w-4 h-2 mr-1 text-[#2D0F00] text-sm font-bold">✓</span> Write, edit, and create content</li>
+                  <li class="flex items-start font-medium text-sm"><span class="w-4 h-2 mr-1 text-[#2D0F00] text-sm font-bold">✓</span> Analyze text and images</li>
+                  <li class="flex items-start font-medium text-sm"><span class="w-4 h-2 mr-1 text-[#2D0F00] text-sm font-bold">✓</span> Ability to search the web</li>
+              </ul>
+          </div>
+      </div>
+
+      <!-- Pro Plan (Center Card) -->
+      <div class="bg-white p-6 rounded-2xl text-left border border-[#2D0F00] border-[2px] outline outline-[#F1B697] outline-[8px] flex flex-col items-start h-full">
+          <div>
+              <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-1">Pro</h3>
+              <p class="text-gray-500 text-sm mb-2">For everyday productivity</p>
+              <p class="text-2xl md:text-3xl font-bold text-[#2D0F00] mb-4">$17<span class="text-sm font-normal text-gray-600"> / month billed annually</span></p>
+              <button class="bg-[#FDC7AF] text-[#2D0F00] w-full text-center my-4 px-6 py-2 rounded-full font-medium text-left hover:bg-orange-200 transition duration-300">Get a Pro plan</button>
+              <ul class="space-y-2 flex flex-col gap-1 text-gray-700 mb-6">
+                  <li class="flex items-start font-medium text-sm"><span class="w-4 h-2 mr-1 text-[#2D0F00] text-sm font-bold">✓</span> More usage</li>
+                  <li class="flex items-start font-medium text-sm"><span class="w-4 h-2 mr-1 text-[#2D0F00] text-sm font-bold">✓</span> Access Pale directly in your terminal</li>
+                  <li class="flex items-start font-medium text-sm"><span class="w-4 h-2 mr-1 text-[#2D0F00] text-sm font-bold">✓</span> Access to unlimited Projects to organize chats and documents</li>
+                  <li class="flex items-start font-medium text-sm"><span class="w-4 h-2 mr-1 text-[#2D0F00] text-sm font-bold">✓</span> Access to Research</li>
+                  <li class="flex items-start font-medium text-sm"><span class="w-4 h-2 mr-1 text-[#2D0F00] text-sm font-bold">✓</span> Connect Google Workspace: email, calendar, and docs</li>
+                  <li class="flex items-start font-medium text-sm"><span class="w-4 h-2 mr-1 text-[#2D0F00] text-sm font-bold">✓</span> Connect any context or tool through Integrations with remote MCP</li>
+                  <li class="flex items-start font-medium text-sm"><span class="w-4 h-2 mr-1 text-[#2D0F00] text-sm font-bold">✓</span> Extended thinking for complex work</li>
+                  <li class="flex items-start font-medium text-sm"><span class="w-4 h-2 mr-1 text-[#2D0F00] text-sm font-bold">✓</span> Ability to use more Pale models</li>
+              </ul>
+          </div>
+      </div>
+
+      <!-- Max Plan (Right Card) -->
+      <div class="bg-[#fef2ed] p-6 rounded-2xl text-left border border-gray-300 flex flex-col items-start h-full">
+          <div>
+              <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-1">Max</h3>
+              <p class="text-gray-500 text-sm mb-2">5-20x more usage than Pro</p>
+              <p class="text-2xl md:text-3xl font-bold text-[#2D0F00] mb-4">From $100<span class="text-sm font-normal text-gray-600"> / month billed monthly</span></p>
+              <button class="bg-white text-[#2D0F00] w-full my-4 px-6 py-2 text-center rounded-full font-medium text-left hover:bg-gray-100 transition duration-300">Get Max plan</button>
+              <ul class="space-y-2 flex flex-col gap-1 text-gray-700 mb-6">
+                  <li class="flex items-start font-medium text-sm"><span class="w-4 h-2 mr-1 text-[#2D0F00] text-sm font-bold">✓</span> Choose 5x or 20x more usage than Pro</li>
+                  <li class="flex items-start font-medium text-sm"><span class="w-4 h-2 mr-1 text-[#2D0F00] text-sm font-bold">✓</span> Higher output limits for all tasks</li>
+                  <li class="flex items-start font-medium text-sm"><span class="w-4 h-2 mr-1 text-[#2D0F00] text-sm font-bold">✓</span> Early access to advanced Pale features</li>
+                  <li class="flex items-start font-medium text-sm"><span class="w-4 h-2 mr-1 text-[#2D0F00] text-sm font-bold">✓</span> Priority access at high traffic times</li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section class="py-16 md:py-24 bg-[#fff8f5]">
+  <div class="container mx-auto px-4 max-w-[973px]">
+      <!-- Main Headline -->
+      <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-5xl font-medium text-gray-900 mb-4">Can you guarantee that</h2>
+          <h2 class="text-3xl md:text-5xl font-medium text-gray-800">you are not training on our data?</h2>
+      </div>
+      
+      <!-- Flex Layout for Questions and Accordion -->
+      <div class="flex flex-col md:flex-row items-start justify-center gap-8 md:gap-16 max-h-[475px]">
+          <!-- Left Column (Questions and Button) -->
+          <div class="w-full md:w-[220px] flex-shrink-0">
+              <h3 class="text-2xl font-semibold text-gray-800 mb-6">Still have questions?</h3>
+              <p class="text-gray-600 mb-8">Reach out to our founders anytime.</p>
+              <a href="#" class="inline-block bg-[#FDC7AF] text-gray-800 px-6 py-3 rounded-full font-semibold hover:bg-orange-200 transition duration-300">Let's talk →</a>
+          </div>
+          
+          <!-- Right Column (Accordion) -->
+          <div class="w-full md:w-[772px] flex-grow">
+              <div class="space-y-6 font-noto-serif">
+                  <div class="accordion-item border-b border-gray-200 cursor-pointer">
+                      <div class="flex justify-between items-center py-0 transition-all duration-300  rounded-lg">
+                          <span class="text-lg font-medium text-gray-700">What workflows can I automate with AI?</span>
+                          <span class="text-gray-400 text-base transform transition-transform duration-300"><img src="./images/arrow-down.svg"/></span>
+                      </div>
+                      <div class="accordion-content mt-2 text-gray-600 text-sm overflow-hidden max-h-0 transition-max-height duration-300">
+                          <p class="pt-4 pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      </div>
+                  </div>
+                  <div class="accordion-item border-b border-gray-200 cursor-pointer">
+                      <div class="flex justify-between items-center py-0 transition-all duration-300  rounded-lg">
+                          <span class="text-lg font-medium text-gray-700">Why not use existing automation platforms?</span>
+                          <span class="text-gray-400 text-base transform transition-transform duration-300"><img src="./images/arrow-down.svg"/></span>
+                      </div>
+                      <div class="accordion-content mt-2 text-gray-600 text-sm overflow-hidden max-h-0 transition-max-height duration-300">
+                          <p class="pt-4 pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      </div>
+                  </div>
+                  <div class="accordion-item border-b border-gray-200 cursor-pointer">
+                      <div class="flex justify-between items-center py-0 transition-all duration-300 rounded-lg">
+                          <span class="text-lg font-medium text-gray-700">Is it free?</span>
+                          <span class="text-gray-400 text-base transform transition-transform duration-300"><img src="./images/arrow-down.svg"/></span>
+                      </div>
+                      <div class="accordion-content mt-2 text-gray-600 text-sm overflow-hidden max-h-0 transition-max-height duration-300">
+                          <p class="pt-4 pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      </div>
+                  </div>
+                  <div class="accordion-item border-b border-gray-200 cursor-pointer">
+                      <div class="flex justify-between items-center py-0 transition-all duration-300 rounded-lg">
+                          <span class="text-lg font-medium text-gray-700">How do I get started?</span>
+                          <span class="text-gray-400 text-base transform transition-transform duration-300"><img src="./images/arrow-down.svg"/></span>
+                      </div>
+                      <div class="accordion-content mt-2 text-gray-600 text-sm overflow-hidden max-h-0 transition-max-height duration-300">
+                          <p class="pt-4 pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      </div>
+                  </div>
+                  <div class="accordion-item border-b border-gray-200 cursor-pointer">
+                      <div class="flex justify-between items-center py-0 transition-all duration-300 rounded-lg">
+                          <span class="text-lg font-medium text-gray-700">What's your policy on file upload privacy?</span>
+                          <span class="text-gray-400 text-base transform transition-transform duration-300"><img src="./images/arrow-down.svg"/></span>
+                      </div>
+                      <div class="accordion-content mt-2 text-gray-600 text-sm overflow-hidden max-h-0 transition-max-height duration-300">
+                          <p class="pt-4 pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+    <!-- CTA Section: Call to Action with headline and button, centered -->
+    <section class="bg-[#fff5f0] py-16 md:py-24">
+      <div class="container mx-auto px-4 text-center">
+          <!-- CTA Headline -->
+          <h2 class="text-4xl md:text-5xl font-medium mb-4">Pale starts now.</h2>
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-400 mb-8">Your future won't wait.</h2>
+          
+          <!-- Get Started Button -->
+          <a href="#" class="bg-black px-8 py-3 rounded-full text-white font-medium hover:bg-gray-800">Get Started</a>
+      </div>
+  </section>
         <!-- Rest of the content will go here -->
     </main>
 
@@ -192,6 +611,79 @@
         mobileMenuLinks.forEach(link => {
             link.addEventListener('click', toggleMobileMenu);
         });
+
+
+              // JavaScript for accordion functionality
+              document.addEventListener('DOMContentLoaded', () => {
+            const accordionItems = document.querySelectorAll('.accordion-item');
+            accordionItems.forEach(item => {
+                const header = item.querySelector('div:first-child');
+                const content = item.querySelector('.accordion-content');
+                const icon = header.querySelector('span:last-child');
+
+                header.addEventListener('click', () => {
+                    const isOpen = content.classList.contains('max-h-screen');
+                    accordionItems.forEach(i => {
+                        const c = i.querySelector('.accordion-content');
+                        const b = i.querySelector('span:last-child');
+                        c.classList.remove('max-h-screen');
+                        c.classList.add('max-h-0');
+                        b.textContent = '∨';
+                    });
+                    if (!isOpen) {
+                        content.classList.remove('max-h-0');
+                        content.classList.add('max-h-screen');
+                        icon.textContent = '×';
+                    }
+                });
+            });
+        });
+
+
+                 const swiper = new Swiper('#cards-swiper', {
+     slidesPerView: 1,
+     spaceBetween: 32,
+     loop: true,
+     pagination: {
+       el: '.swiper-pagination',
+       clickable: true,
+       bulletActiveClass: 'bg-black',
+       bulletClass: 'w-3 h-3 rounded-full inline-block mx-[8px] border border-black cursor-pointer text-white transition-all duration-300 swiper-pagination-bullet',
+     },
+     navigation: {
+       nextEl: '.swiper-button-next',
+       prevEl: '.swiper-button-prev',
+     },
+     breakpoints: {
+       768: { slidesPerView: 2 },
+       1024: { slidesPerView: 3 }
+     },
+     on: {
+       init: function (swiper) {
+         // Initial setup of bullets
+         const bullets = document.querySelectorAll('.swiper-pagination-bullet');
+         bullets.forEach((bullet, index) => {
+           if (index === 0) {
+             bullet.style.backgroundColor = 'black';
+           } else {
+             bullet.style.backgroundColor = 'transparent';
+           }
+         });
+       },
+       slideChange: function (swiper) {
+         // Update bullets on slide change
+         const bullets = document.querySelectorAll('.swiper-pagination-bullet');
+         bullets.forEach((bullet, index) => {
+           if (index === swiper.realIndex) {
+             bullet.style.backgroundColor = 'black';
+           } else {
+             bullet.style.backgroundColor = 'transparent';
+           }
+         });
+       }
+     }
+   });
+
     </script>
 </body>
 </html>

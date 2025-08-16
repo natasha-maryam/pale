@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pale</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Noto+Serif:wght@400;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sora: ['Sora', 'sans-serif'],
+                        'noto-serif': ['Noto Serif', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="font-sora">
+    <header class="px-6 py-4 max-w-7xl mx-auto relative">
+        <nav class="flex items-center justify-between">
+            <!-- Logo and Brand -->
+            <div class="flex items-center space-x-2">
+                <img src="./logo.png" alt="Pale" class="w-[101px] h-[38px]">
+            </div>
+
+            <!-- Navigation Links (Desktop) -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#features" class="text-black hover:text-black transition-colors text-[16px]">Features</a>
+                <a href="#use-cases" class="text-black hover:text-black transition-colors text-[16px]">Use Cases</a>
+                <a href="#about" class="text-black hover:text-black transition-colors text-[16px]">About</a>
+                <a href="#pricing" class="text-black hover:text-black transition-colors text-[16px]">Pricing</a>
+            </div>
+
+            <!-- CTA Button (Desktop) and Mobile Menu Button -->
+            <div class="flex items-center">
+                <a href="#get-started" class="hidden md:flex bg-[#010101] text-white px-4 py-2 rounded-full hover:bg-gray-800 transition-colors">
+                    Get Started
+                </a>
+                <button class="md:hidden flex items-center" id="mobile-menu-button">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu fixed top-0 left-0 w-full h-full bg-white z-50 md:hidden">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-8">
+                        <img src="./logo.png" alt="Pale" class="w-[101px] h-[38px]">
+                        <button class="mobile-menu-close">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="flex flex-col space-y-6">
+                        <a href="#features" class="text-black hover:text-black transition-colors text-[20px]">Features</a>
+                        <a href="#use-cases" class="text-black hover:text-black transition-colors text-[20px]">Use Cases</a>
+                        <a href="#about" class="text-black hover:text-black transition-colors text-[20px]">About</a>
+                        <a href="#pricing" class="text-black hover:text-black transition-colors text-[20px]">Pricing</a>
+                        <a href="#get-started" class="bg-[#010101] text-white px-6 py-3 rounded-full hover:bg-gray-800 transition-colors text-center mt-4 text-[18px]">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Hero Section -->
+        <section class="relative w-full bg-[url('./images/hero-bg.jpg')] bg-cover bg-center bg-no-repeat min-h-screen md:min-h-0">
+      
+            <!-- Content -->
+            <div class="text-center max-w-3xl mx-auto py-10 md:pt-20 md:pb-2 px-4 md:px-0">
+                <!-- Tag -->
+                <div class="inline-flex items-center gap-2 bg-[#fbe3d6] backdrop-blur-sm px-4 py-2 rounded-full mt-8 md:mt-0 mb-6 md:mb-8 text-[#542208] text-[14px] md:text-[16px] font-noto-serif">
+                    <span class="bg-[#eee0d8] rounded-2xl p-1 shadow-sm shadow-white"><img src="./images/ai-agent.svg" class="w-[20px] h-[20px] md:w-[25px] md:h-[25px]"/></span> <span>The future of <span class="font-semibold">AI Agents</span></span>
+                </div>
+
+                <!-- Headline -->
+                <h1 class="text-[32px] md:text-[48px] font-semibold leading-tight mb-4 md:mb-6 font-sora px-4 md:px-0">
+                    Put AI to work without fear of hallucinations.
+                </h1>
+
+                <!-- Subheadline -->
+                <p class="text-base md:text-lg text-gray-600 mb-6 md:mb-8 font-noto-serif px-4 md:px-0">
+                    Seamlessly integrate AI with your tools while maintaining complete control.
+                </p>
+
+                <!-- CTA Button -->
+                <a href="#get-started" class="inline-flex items-center justify-center bg-black text-white rounded-full text-base md:text-lg font-medium hover:bg-gray-800 transition-colors w-[140px] md:w-[164px] h-[48px] md:h-[54px]">
+                    Get Started
+                </a>
+
+                <div class="flex items-center justify-center flex-col mt-10 md:mt-14 sm:mt-20">
+                    <p class="text-[16px] md:text-[18px] px-4 md:px-0">
+                        Add <span class="font-semibold">Apps</span> & <span class="font-semibold">Control</span> every action</p>
+                        <img src="./images/hero-vector.svg" class="md:max-w-none"/>
+                </div>
+                <img src="./images/hero-foreground.png" class="w-[643px] h-[490px] mx-auto block mt-2"/>
+            </div>
+        
+        </section>
+
+        <!-- Rest of the content will go here -->
+    </main>
+
+    <!-- Include Footer -->
+    <div id="footer-container"></div>
+
+    <script>
+        // Fetch and inject the footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            });
+
+        // Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileMenuClose = document.querySelector('.mobile-menu-close');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        }
+
+        mobileMenuButton.addEventListener('click', toggleMobileMenu);
+        mobileMenuClose.addEventListener('click', toggleMobileMenu);
+
+        // Close mobile menu when clicking on links
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', toggleMobileMenu);
+        });
+    </script>
+</body>
+</html>

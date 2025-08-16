@@ -147,15 +147,15 @@
                         <div class="space-y-6">
                             <h3 class="text-[18px] font-bold text-[#2D0F00]">How it works:</h3>
                             <div class="flex items-start gap-4">
-                                <span class="flex items-center justify-center w-8 h-8 rounded-full bg-[#F5B899] font-medium text-[16px] min-h-8">1</span>
+                                <span class="flex items-center justify-center min-w-8 h-8 rounded-full bg-[#F5B899] font-medium text-[16px] min-h-8">1</span>
                                 <p class="text-lg">Type @ to see available tools</p>
                             </div>
                             <div class="flex items-start gap-4">
-                                <span class="flex items-center justify-center w-8 h-8 rounded-full bg-[#F5B899] font-medium text-[16px]">2</span>
+                                <span class="flex items-center justify-center min-w-8 h-8 rounded-full bg-[#F5B899] font-medium text-[16px]">2</span>
                                 <p class="text-lg">Tool chips appear as you @mention them</p>
                             </div>
                             <div class="flex items-start gap-4">
-                                <span class="flex items-center justify-center w-8 h-8 rounded-full bg-[#F5B899] font-medium text-[16px]">3</span>
+                                <span class="flex items-center justify-center min-w-8 h-8 rounded-full bg-[#F5B899] font-medium text-[16px]">3</span>
                                 <p class="text-lg">Each tool has default permission settings</p>
                             </div>
                         </div>
@@ -187,7 +187,7 @@
                         <!-- Features list -->
                         <div class="space-y-6">
                             <div class="flex items-start gap-4">
-                                <span class="flex items-center justify-center w-[48px] h-[48px] rounded-full bg-[#F5B899] min-h-[48px]">
+                                <span class="flex items-center justify-center min-w-[48px] h-[48px] rounded-full bg-[#F5B899] min-h-[48px]">
                                     <img src="./images/control.svg" class="w-[24px] h-[24px]"/>
                                 </span>
                                 <div>
@@ -196,7 +196,7 @@
                                 </div>
                             </div>
                             <div class="flex items-start gap-4">
-                                <span class="flex items-center justify-center w-[48px] h-[48px] rounded-full bg-[#F5B899]">
+                                <span class="flex items-center justify-center min-w-[48px] h-[48px] rounded-full bg-[#F5B899]">
                                     <img src="./images/memory.svg" class="w-[24px] h-[24px]"/>
                                 </span>
                                 <div>
@@ -205,7 +205,7 @@
                                 </div>
                             </div>
                             <div class="flex items-start gap-4">
-                                <span class="flex items-center justify-center w-[48px] h-[48px] rounded-full bg-[#F5B899]">
+                                <span class="flex items-center justify-center min-w-[48px] h-[48px] rounded-full bg-[#F5B899]">
                                     <img src="./images/actions.svg" />
                                 </span>
                                 <div>
@@ -242,7 +242,7 @@
                         
                         <div class="space-y-6">
                                                          <div class="flex items-start gap-4">
-                                <span class="flex items-center justify-center w-[48px] h-[48px] rounded-full bg-[#F5B899] min-h-[48px]">
+                                <span class="flex items-center justify-center min-w-[48px] h-[48px] rounded-full bg-[#F5B899] min-h-[48px]">
                                     <img src="./images/access.svg" class="w-[24px] h-[24px]"/>
                                 </span>
                                 <div>
@@ -251,7 +251,7 @@
                                 </div>
                             </div>
                             <div class="flex items-start gap-4">
-                                <span class="flex items-center justify-center w-[48px] h-[48px] rounded-full bg-[#F5B899]">
+                                <span class="flex items-center justify-center min-w-[48px] h-[48px] rounded-full bg-[#F5B899]">
                                     <img src="./images/one-click.svg" class="w-[24px] h-[24px]"/>
                                 </span>
                                 <div>
@@ -260,7 +260,7 @@
                                 </div>
                             </div>
                             <div class="flex items-start gap-4">
-                                <span class="flex items-center justify-center w-[48px] h-[48px] rounded-full bg-[#F5B899]">
+                                <span class="flex items-center justify-center min-w-[48px] h-[48px] rounded-full bg-[#F5B899]">
                                     <img src="./images/fast.svg"/>
                                 </span>
                                 <div>
@@ -326,7 +326,7 @@
           <img src="./images/icon9.svg" alt="icon" class="w-[38px] h-[38px]">
         </div>
         <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
-          <img src="/images/icon10.svg" alt="icon" class="w-[38px] h-[38px]">
+          <img src="/images/clickup.svg" alt="icon" class="w-[38px] h-[38px]">
         </div>
         <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
           <img src="./images/icon11.svg" alt="icon" class="w-[38px] h-[38px]">
@@ -346,12 +346,18 @@
 
 
     <section class="py-10 container">
-        <div class=" flex items-center justify-between w-full my-16 px-4">
-             <h2 class="text-[48px] md:text-5xl text-black font-medium " style="letter-spacing: -1.5px;">Trusted by <br> product Lovers</h2>
-             <div class=" flex flex-col gap-2"><p class=" text-black text-base font-medium">Pale is built on the core habits of top-performing <br>product teams: staying focused, moving fast, and <br> delivering exceptional work.</p>
-            <button class="bg-white font-bold text-base text-black px-1 py-2 rounded w-[300px]">Read our Customer Stories →</button>
-            </div>
+       <div class=" flex items-center justify-between w-full md:my-16 my-4 px-4 flex-col md:flex-row ">
+               <h2 class="text-4xl md:text-5xl text-black font-medium mb-5 md:hidden text-center">Trusted by product Lovers</h2>
+
+         <h2 class="text-4xl md:text-5xl text-black font-medium mb-5 hidden md:flex">Trusted by <br> product Lovers</h2>
+         <div class=" flex flex-col gap-2"><p class=" text-black text-base hidden md:flex">Pale is built on the core habits of top-performing <br>product teams: staying focused, moving fast, and <br> delivering exceptional work.</p>
+         <div class=" flex flex-col gap-2"><p class=" text-black text-base md:hidden">Pale is built on the core habits of top-performing product teams: staying focused, moving fast, and delivering exceptional work.</p>
+        
+            <button class="bg-white font-bold text-base text-black px-1 py-2 rounded my-5">Read our Customer Stories →</button>
         </div>
+    </div>
+        </div>
+
              <div id="cards-swiper" class="swiper relative w-full" 
             style="--swiper-theme-color:#000; --swiper-navigation-size:16px;">
          <div class="swiper-wrapper">
@@ -583,7 +589,61 @@
     </main>
 
     <!-- Include Footer -->
-    <div id="footer-container"></div>
+    <footer class="bg-[#fff8f5]  py-10 md:py-16 font-sora">
+    <div class="max-w-7xl mx-auto px-6">
+        <!-- Top Section with Logo and Navigation -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Logo Section -->
+            <div class="col-span-1">
+                <img src="./logo.png" alt="Pale" class="w-[101px] h-[38px] mb-6 md:mb-0">
+            </div>
+
+            <!-- Products Navigation -->
+            <div class="col-span-1">
+                <h3 class="text-sm font-semibold uppercase text-gray-500 mb-4">PRODUCTS</h3>
+                <ul class="space-y-3">
+                    <li><a href="#product-overview" class="text-gray-600 hover:text-black">Product Overview</a></li>
+                    <li><a href="#real-time-decision" class="text-gray-600 hover:text-black">Real-Time Decision Log</a></li>
+                    <li><a href="#checks-alerts" class="text-gray-600 hover:text-black">Checks & Alerts</a></li>
+                    <li><a href="#execution-ai" class="text-gray-600 hover:text-black">Execution AI Agents</a></li>
+                </ul>
+            </div>
+
+            <!-- Resources Navigation -->
+            <div class="col-span-1 mt-8 md:mt-0">
+                <h3 class="text-sm font-semibold uppercase text-gray-500 mb-4">RESOURCES</h3>
+                <ul class="space-y-3">
+                    <li><a href="#pricing" class="text-gray-600 hover:text-black">Pricing</a></li>
+                    <li><a href="#blog" class="text-gray-600 hover:text-black">Blog</a></li>
+                    <li><a href="#events" class="text-gray-600 hover:text-black">Events</a></li>
+                </ul>
+            </div>
+
+            <!-- Company Navigation -->
+            <div class="col-span-1 mt-8 md:mt-0">
+                <h3 class="text-sm font-semibold uppercase text-gray-500 mb-4">COMPANY</h3>
+                <ul class="space-y-3">
+                    <li><a href="#why-pale" class="text-gray-600 hover:text-black">Why Pale</a></li>
+                    <li><a href="#about" class="text-gray-600 hover:text-black">About</a></li>
+                    <li><a href="#careers" class="text-gray-600 hover:text-black">Careers</a></li>
+                    <li><a href="#referral" class="text-gray-600 hover:text-black">Referral Program</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Bottom Section with Copyright and Legal Links -->
+        <div class="mt-10 md:mt-16 pt-8 border-t border-gray-200">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                <p class="text-gray-500 text-sm text-center md:text-left">&copy; Pale 2025. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#privacy" class="text-gray-500 hover:text-black text-sm">Privacy Policy</a>
+                    <a href="#terms" class="text-gray-500 hover:text-black text-sm">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
 
     <script>
         // Fetch and inject the footer

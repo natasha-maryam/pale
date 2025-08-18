@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pale</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Noto+Serif:wght@400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Noto+Serif:wght@400;600&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -15,6 +18,7 @@
                     fontFamily: {
                         sora: ['Sora', 'sans-serif'],
                         'noto-serif': ['Noto Serif', 'serif'],
+                        inter: ['Inter', 'sans-serif'],
                     },
                 }
             }
@@ -25,42 +29,69 @@
             transform: translateX(-100%);
             transition: transform 0.3s ease-in-out;
         }
+
         .mobile-menu.active {
             transform: translateX(0);
         }
+
         .swiper-pagination-bullet {
             background-color: transparent;
             opacity: 1;
         }
+
         .swiper-pagination-bullet-active {
             background-color: black !important;
         }
     </style>
 </head>
+
 <body class="font-sora ">
     <header class="px-6 py-4 max-w-7xl mx-auto relative">
         <nav class="flex items-center justify-between">
             <!-- Logo and Brand -->
             <div class="flex items-center space-x-2">
-                <img src="./logo.png" alt="Pale" class="w-[101px] h-[38px]">
+                <img src="./logo.svg" alt="Pale" class="w-[101px] h-[38px]">
             </div>
 
             <!-- Navigation Links (Desktop) -->
             <div class="hidden md:flex items-center space-x-8">
-                <a href="#features" class="text-black hover:text-black transition-colors">Features</a>
-                <a href="#use-cases" class="text-black hover:text-black transition-colors">Use Cases</a>
-                <a href="#about" class="text-black hover:text-black transition-colors text-[16px]">About</a>
-                <a href="#pricing" class="text-black hover:text-black transition-colors text-[16px]">Pricing</a>
+                <a href="#features" class="relative inline-block text-black group">
+                    Features
+                    <span
+                        class="pointer-events-none absolute left-0 -bottom-[2px] block h-px w-full origin-left scale-x-0 bg-[#000000] transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
+                </a>
+                <a href="#use-cases" class="relative inline-block text-black group">
+                    Use Cases
+                    <span
+                        class="pointer-events-none absolute left-0 -bottom-[2px] block h-px w-full origin-left scale-x-0 bg-[#000000] transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
+                </a>
+                <a href="#about" class="relative inline-block text-black text-[16px] group">
+                    About
+                    <span
+                        class="pointer-events-none absolute left-0 -bottom-[2px] block h-px w-full origin-left scale-x-0 bg-[#000000] transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
+                </a>
+                <a href="#pricing" class="relative inline-block text-black text-[16px] group">
+                    Pricing
+                    <span
+                        class="pointer-events-none absolute left-0 -bottom-[2px] block h-px w-full origin-left scale-x-0 bg-[#000000] transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
+                      </a>
             </div>
 
-            <!-- CTA Button (Desktop) and Mobile Menu Button -->
-            <div class="flex items-center">
-                <a href="#get-started" class="hidden md:flex bg-[#010101] text-white px-4 py-2 rounded-full hover:bg-gray-800 transition-colors">
+            <!-- Right Side Icons and CTA Button -->
+            <div class="flex items-center gap-3">
+
+                <!-- Get Started Button -->
+                <a href="#get-started"
+                    class="hidden md:flex bg-[#000000] text-white px-4 py-2 rounded-full hover:bg-gray-800 transition-colors">
                     Get Started
                 </a>
+
+                <!-- Mobile Menu Button -->
                 <button class="md:hidden flex items-center" id="mobile-menu-button">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    <svg class="w-6 h-6" fill="none" stroke="black" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
             </div>
@@ -69,19 +100,38 @@
             <div class="mobile-menu fixed top-0 left-0 w-full h-full bg-white z-50 md:hidden">
                 <div class="p-6">
                     <div class="flex justify-between items-center mb-8">
-                        <img src="./logo.png" alt="Pale" class="w-[101px] h-[38px]">
+                        <img src="./logo.svg" alt="Pale" class="w-[101px] h-[38px]">
                         <button class="mobile-menu-close">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12"></path>
                             </svg>
                         </button>
                     </div>
                     <div class="flex flex-col space-y-6">
-                        <a href="#features" class="text-black hover:text-black transition-colors text-[20px]">Features</a>
-                        <a href="#use-cases" class="text-black hover:text-black transition-colors text-[20px]">Use Cases</a>
-                        <a href="#about" class="text-black hover:text-black transition-colors text-[20px]">About</a>
-                        <a href="#pricing" class="text-black hover:text-black transition-colors text-[20px]">Pricing</a>
-                        <a href="#get-started" class="bg-[#010101] text-white px-6 py-3 rounded-full hover:bg-gray-800 transition-colors text-center mt-4 text-[18px]">
+                        <a href="#features" class="relative inline-block text-black group">
+                            Features
+                            <span
+                                class="pointer-events-none absolute left-0 -bottom-[2px] block h-px w-full origin-left scale-x-0 bg-[#000000] transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
+                        </a>
+                        <a href="#use-cases" class="relative inline-block text-black group">
+                            Use Cases
+                            <span
+                                class="pointer-events-none absolute left-0 -bottom-[2px] block h-px w-full origin-left scale-x-0 bg-[#000000] transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
+                        </a>
+                        <a href="#about" class="relative inline-block text-black text-[16px] group">
+                            About
+                            <span
+                                class="pointer-events-none absolute left-0 -bottom-[2px] block h-px w-full origin-left scale-x-0 bg-[#000000] transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
+                        </a>
+                        <a href="#pricing" class="relative inline-block text-black text-[16px] group">
+                            Pricing
+                            <span
+                                class="pointer-events-none absolute left-0 -bottom-[2px] block h-px w-full origin-left scale-x-0 bg-[#000000] transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
+                              </a>
+                        <a href="#get-started"
+                            class="bg-[#010101] text-white px-6 py-3 rounded-full hover:bg-gray-800 transition-colors text-center mt-4 text-[18px] ">
                             Get Started
                         </a>
                     </div>
@@ -93,136 +143,382 @@
     <!-- Main Content Area -->
     <main class="bg-[#fff8f5]">
         <!-- Hero Section -->
-        <section class="relative w-full bg-[url('./images/hero-bg.jpg')] bg-cover bg-center bg-no-repeat min-h-screen md:min-h-0">
-      
+        <section
+            class="relative w-full bg-[url('./images/hero-bg.svg')] bg-cover bg-center bg-no-repeat min-h-screen md:min-h-0">
+
             <!-- Content -->
             <div class="text-center max-w-3xl mx-auto py-10 md:pt-20 md:pb-2 px-4 md:px-0">
                 <!-- Tag -->
-                <div class="inline-flex items-center gap-2 bg-[#fbe3d6] backdrop-blur-sm px-4 py-2 rounded-full mt-8 md:mt-0 mb-6 md:mb-8 text-[#542208] text-[14px] md:text-[16px]">
-                    <span class="bg-[#eee0d8] rounded-2xl p-1 shadow-sm shadow-white"><img src="./images/ai-agent.svg" class="w-[20px] h-[20px] md:w-[25px] md:h-[25px]"/></span> <span>The future of <span class="font-semibold">AI Agents</span></span>
+                <div
+                    class="inline-flex w-[262px] h-[47px] items-center px-2  gap-[8px] rounded-[100px] mt-8 md:mt-0 mb-4 md:mb- text-[#542208] text-[16px] md:text-[16px] bg-[#F5B899] bg-opacity-40 backdrop-blur-[10px] shadow-sm">
+                    <span class=" rounded-[100px] px-2 py-1 border-white/0 w-[43px] h-[31px]" style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0.06) 100%), rgba(255, 255, 255, 0.40);
+           box-shadow: -0.7px -0.7px 0 0 #FFF inset, 0 0.7px 0 0 #FFF inset, 0 12px 38px 0 rgba(0, 0, 0, 0.15);
+           backdrop-filter: blur(3.5px);">
+                        <img src="./images/chat-bot-icon.svg" class="w-[20px] h-[20px] md:w-[27px] md:h-[25px]  " />
+                    </span> <span>The future of <span class="font-semibold">AI Agents</span></span>
                 </div>
 
                 <!-- Headline -->
-                <h1 class="text-[32px] md:text-[48px] font-semibold leading-tight mb-4 md:mb-6 font-sora px-4 md:px-0">
+                <h1 class="text-[32px] md:text-[48px] font-medium leading-tight mb-4 md:mb-4 font-sora px-4 md:px-0">
                     Put AI to work without fear of hallucinations.
                 </h1>
 
                 <!-- Subheadline -->
-                <p class="text-base md:text-lg text-gray-600 mb-6 md:mb-8 font-noto-serif px-4 md:px-0">
+                <p class="text-base md:text-lg text-[#00000099] mb-4 md:mb-4 font-noto-serif px-4 md:px-0">
                     Seamlessly integrate AI with your tools while maintaining complete control.
                 </p>
 
                 <!-- CTA Button -->
-                <a href="#get-started" class="inline-flex items-center justify-center bg-black text-white rounded-full text-base md:text-lg font-medium hover:bg-gray-800 transition-colors w-[140px] md:w-[164px] h-[48px] md:h-[54px]">
+                <a href="#get-started"
+                    class="font-inter mb-[110px] inline-flex items-center justify-center bg-black text-white rounded-full font-medium text-[18px]  md:text-lg  hover:bg-gray-800 transition-colors w-[140px] md:w-[164px] h-[48px] md:h-[54px]">
                     Get Started
                 </a>
 
-                <div class="flex items-center justify-center flex-col mt-10 md:mt-14 sm:mt-20">
+                <div class="flex items-center justify-center flex-col ">
                     <p class="text-[16px] md:text-[18px] px-4 md:px-0">
-                        Add <span class="font-semibold">Apps</span> & <span class="font-semibold">Control</span> every action</p>
-                        <img src="./images/hero-vector.svg" class="md:max-w-none"/>
+                        Add <span class="font-bold">Apps</span> & <span class="font-bold">Control</span> every
+                        action</p>
+                    <img src="./images/hero-vector.svg" class="md:max-w-none" />
                 </div>
-                <img src="./images/hero-foreground.png" class="w-auto h-auto mx-auto block mt-2"/>
+                <img src="./images/hero-foreground.png" class="w-auto h-auto mx-auto block mt-2" />
             </div>
-        
+
         </section>
 
         <!-- Tools Section -->
-        <section class="py-8">
+        <section class="mt-[100px]">
             <div class="max-w-full mx-auto">
                 <div class="flex flex-col lg:flex-row items-center">
                     <!-- Content Left -->
-                    <div class="w-full lg:w-1/2 px-8 sm:px-12 md:px-16 lg:px-32">
-                        <div class="inline-flex items-center gap-2 bg-[#2D0F00] px-4 py-1.5 rounded-full text-white text-[14px] mb-6">
+                    <div class="w-full lg:w-[50%] px-8 sm:px-12 md:px-16 lg:px-32">
+                        <div
+                            class="inline-flex flex justify-center items-center bg-[#2D0F00] rounded-full text-white text-[14px] mb-3 font-normal w-[95px] h-[26px]" style="letter-spacing: 0.7px;">
                             FEATURE 1
                         </div>
-                        <h2 class="text-[48px] sm:text-[44px] lg:text-[40px] font-semibold leading-tight mb-6 font-sora">
+                        <h2 class="text-[48px] sm:text-[44px] lg:text-[48px] font-medium leading-tight mb-4 font-sora" style="line-height: 60px;">
                             Choose available tools
                         </h2>
-                        <p class="text-gray-600 text-[18px] mb-8 font-noto-serif sm:pr-8 lg:pr-0">
-                            Make tools available to the AI by simply @mentioning them. Convenient defaults: reading allowed, asks before making changes (writes).
+                        <p class="text-[#000000]/60 text-[18px] mb-10 font-noto-serif sm:pr-8 lg:pr-0">
+                            Make tools available to the AI by simply @mentioning them. Convenient defaults: reading
+                            allowed, asks before making changes (writes).
                         </p>
-                        
+
                         <!-- How it works -->
-                        <div class="space-y-6">
-                            <h3 class="text-[18px] font-bold text-[#2D0F00]">How it works:</h3>
-                            <div class="flex items-start gap-4">
-                                <span class="flex items-center justify-center min-w-8 h-8 rounded-full bg-[#F5B899] font-medium text-[16px] min-h-8">1</span>
-                                <p class="text-lg">Type @ to see available tools</p>
+                        <div class="space-y-[12px]">
+                            <h3 class="text-[18px] font-bold text-[#2D0F00]" style="letter-spacing: 0.7px;">How it works:</h3>
+                            <div class="flex items-start gap-[12px]">
+                                <span
+                                    class="flex items-center justify-center min-w-[24px] h-[24px] rounded-full bg-[#F5B899] font-medium text-[16px] min-h-[24px] font-inter">1</span>
+                                <p class="text-[16px] font-medium">Type @ to see available tools</p>
                             </div>
-                            <div class="flex items-start gap-4">
-                                <span class="flex items-center justify-center min-w-8 h-8 rounded-full bg-[#F5B899] font-medium text-[16px]">2</span>
-                                <p class="text-lg">Tool chips appear as you @mention them</p>
+                            <div class="flex items-start gap-[12px]">
+                                <span
+                                    class="flex items-center justify-center min-w-[24px] h-[24px] rounded-full bg-[#F5B899] font-medium text-[16px] font-inter ">2</span>
+                                <p class="text-[16px] font-medium">Tool chips appear as you @mention them</p>
                             </div>
-                            <div class="flex items-start gap-4">
-                                <span class="flex items-center justify-center min-w-8 h-8 rounded-full bg-[#F5B899] font-medium text-[16px]">3</span>
-                                <p class="text-lg">Each tool has default permission settings</p>
+                            <div class="flex items-start gap-[12px]">
+                                <span
+                                    class="flex items-center justify-center min-w-[24px] h-[24px] rounded-full bg-[#F5B899] font-medium text-[16px] font-inter ">3</span>
+                                <p class="text-[16px] font-medium">Each tool has default permission settings</p>
                             </div>
                         </div>
                     </div>
-
                     <!-- Image Right -->
-                    <div class="w-full md:w-1/2 flex justify-end">
-                        <img src="./images/section-2.png" class="w-auto h-auto max-w-full"/>
+                    <div class="w-full md:w-[50%] flex flex-col gap-4 relative ml-[20px] md:ml-[40px]">
+                        <!-- Background Image -->
+                        <div class="w-full h-full relative">
+                            <img src="./images/feature-1.png" alt="Background" class="w-full h-full  rounded-[24px]" />
+                            <div class="absolute top-[28%] left-[40px] w-fit">
+                                <!-- App Selection Interface -->
+                                <div class="ms-auto mr-[80px] relative -mb-[50px] z-10 max-w-[280px] rounded-[24px] border-[0.5px] border-[rgba(255,255,255,0.00)] shadow-[inset_-0.5px_-0.5px_0_0_#FFF,inset_0_0.5px_0_0_#FFF] backdrop-blur-[25px] p-3 w-full"
+                                    style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0.06) 100%), rgba(255, 255, 255, 0.40);">
+                                    <!-- App List -->
+                                    <div class="space-y-3 font-sora"
+                                        style="color: #000; font-feature-settings: 'liga' off, 'clig' off;">
+                                        <!-- HubSpot -->
+                                        <div class="flex items-center justify-between rounded-2xl p-2">
+                                            <div class="flex items-center gap-3">
+                                                <img src="./images/hubspot.svg" alt="HubSpot"
+                                                    class="w-[22px] h-[22px]" />
+                                                <span
+                                                    class="text-[15px] font-normal leading-[22px] tracking-[-0.43px]">HubSpot</span>
+                                            </div>
+                                            <img src="./images/Clock-Circle.svg" alt="Pending" class="w-4 h-4" />
+                                        </div>
+
+                                        <!-- GitHub -->
+                                        <div class="flex items-center justify-between rounded-2xl p-2">
+                                            <div class="flex items-center gap-3">
+                                                <img src="./images/git.svg" alt="GitHub" class="w-[22px] h-[22px]" />
+                                                <span
+                                                    class="text-[15px] font-normal leading-[22px] tracking-[-0.43px]">GitHub</span>
+                                            </div>
+                                            <img src="./images/check.svg" alt="Connected" class="w-4 h-4" />
+                                        </div>
+
+                                        <!-- Instagram -->
+                                        <div class="flex items-center justify-between rounded-2xl p-2">
+                                            <div class="flex items-center gap-3">
+                                                <img src="./images/insta.svg" alt="Instagram"
+                                                    class="w-[22px] h-[22px]" />
+                                                <span
+                                                    class="text-[15px] font-normal leading-[22px] tracking-[-0.43px]">Instagram</span>
+                                            </div>
+                                            <img src="./images/Clock-Circle.svg" alt="Pending" class="w-4 h-4" />
+                                        </div>
+
+                                        <!-- Drive -->
+                                        <div class="flex items-center justify-between rounded-2xl p-2">
+                                            <div class="flex items-center gap-3">
+                                                <img src="./images/google-d.svg" alt="Drive"
+                                                    class="w-[22px] h-[22px]" />
+                                                <span
+                                                    class="text-[15px] font-normal leading-[22px] tracking-[-0.43px]">Drive</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Sentry -->
+                                        <div class="flex items-center justify-between p-2" style="
+        border-radius: 16px;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.10) 0%, rgba(0, 0, 0, 0.10) 100%), rgba(255, 255, 255, 0.20);
+        backdrop-filter: blur(25px);
+    ">
+                                            <div class="flex items-center gap-3">
+                                                <img src="./images/attlasian.svg" alt="Sentry"
+                                                    class="w-[22px] h-[22px]" />
+                                                <span
+                                                    class="text-[15px] font-normal leading-[22px] tracking-[-0.43px]">Sentry</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Input Section -->
+                                <div class="ml-[-40px] md:ml-[-80px]  w-fit p-6 rounded-[32px] border-[0.5px] border-[rgba(255,255,255,0.00)] shadow-[inset_-0.7px_-0.7px_0_0_#FFF,inset_0_0.7px_0_0_#FFF,0_26px_36px_0_rgba(0,0,0,0.15)] backdrop-blur-[3.5px]"
+                                    style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0.06) 100%), rgba(255, 255, 255, 0.40);">
+                                    <p class="text-[16px] text-black/80 mb-4">look what i did since yesterday on
+                                        @github.
+                                        update me about<br /> @Jira. fetch new issues on @</p>
+                                    <div class="flex items-center justify-between gap-2">
+                                        <div class="flex items-center gap-2">
+                                            <span class="text-[12px] text-black/40">@</span>
+                                            <div class="flex gap-2">
+                                                <div
+                                                    class="rounded-[24px] px-3 py-1.5 flex items-center gap-2 border-[0.5px] border-[rgba(255,255,255,0.00)] bg-[rgba(217,217,217,0.40)] shadow-[inset_-0.7px_-0.7px_0_0_#FFF,inset_0_0.7px_0_0_#FFF,0_26px_36px_0_rgba(0,0,0,0.15)] backdrop-blur-[13px]">
+                                                    <img src="./images/git.svg" alt="GitHub" class="w-5 h-5" />
+                                                    <span class="text-[14px]">GitHub</span>
+                                                    <img src="./images/cross.svg" alt="Remove"
+                                                        class="w-2 h-2 cursor-pointer" />
+                                                </div>
+                                                <div
+                                                    class="rounded-[24px] px-3 py-1.5 flex items-center gap-2 border-[0.5px] border-[rgba(255,255,255,0.00)] bg-[rgba(217,217,217,0.40)] shadow-[inset_-0.7px_-0.7px_0_0_#FFF,inset_0_0.7px_0_0_#FFF,0_26px_36px_0_rgba(0,0,0,0.15)] backdrop-blur-[13px]">
+                                                    <img src="./images/jira.svg" alt="Jira" class="w-5 h-5" />
+                                                    <span class="text-[14px]">Jira</span>
+                                                    <img src="./images/cross.svg" alt="Remove"
+                                                        class="w-2 h-2 cursor-pointer" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center gap-2 ">
+
+                                            <img src="./images/bot.svg" alt="Jira" class="w-5 h-5" />
+                                            <span
+                                                class="h-9 w-9 bg-[#121212] flex items-center justify-center rounded-full">
+                                                <img src="./images/arrow-down-1.svg" alt="Remove"
+                                                    class="w-4 h-4 cursor-pointer" /></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-                 <!-- Stay in charge section -->
-         <section class="py-8">
-             <div class="max-w-full mx-auto">
-                 <div class="flex flex-col lg:flex-row items-center">
-                     <!-- Content Left -->
-                     <div class="w-full lg:w-1/2 px-8 sm:px-12 md:px-16 lg:px-32 order-1 lg:order-2">
-                        <div class="inline-flex items-center gap-2 bg-[#2D0F00] px-4 py-1.5 rounded-full text-white text-[14px] mb-6">
+        <!-- Stay in charge section -->
+        <section class="py-10">
+            <div class="max-w-full mx-auto">
+                <div class="flex flex-col lg:flex-row items-center">
+                    <!-- Content Left -->
+                    <div class="w-full lg:w-1/2 px-6 sm:px-8 md:px-12 lg:px-20 order-1 lg:order-2">
+                        <div
+                            class="inline-flex flex justify-center items-center gap-2 bg-[#2D0F00] px-2 py-[2px] rounded-full text-white text-[14px] mb-3 w-[114px] h-[26px] font-normal" style="letter-spacing: 0.7px;">
                             FEATURE 2
                         </div>
-                        <h2 class="text-[48px] sm:text-[44px] lg:text-[40px] font-semibold leading-tight mb-6 font-sora">
+                        <h2 class="text-[34px] sm:text-[40px] lg:text-[48px] font-medium leading-tight mb-4 font-sora" style="line-height: 60px;">
                             Stay in charge
                         </h2>
-                        <p class="text-gray-600 text-[18px] mb-8 font-noto-serif sm:pr-8 lg:pr-0">
-                            You choose Allow once, Always allow, or Deny for each action. Never worry about AI overstepping boundaries.
+                        <p class="text-[#000000]/60 text-[16px] sm:text-[18px] mb-10 font-noto-serif sm:pr-8 lg:pr-0" style="letter-spacing: 0.7px;">
+                            You choose Allow once, Always allow, or Deny for each action. Never worry about AI
+                            overstepping boundaries.
                         </p>
-                        
+
                         <!-- Features list -->
                         <div class="space-y-6">
-                            <div class="flex items-start gap-4">
-                                <span class="flex items-center justify-center min-w-[48px] h-[48px] rounded-full bg-[#F5B899] min-h-[48px]">
-                                    <img src="./images/control.svg" class="w-[24px] h-[24px]"/>
+                            <div class="flex items-start gap-3">
+                                <span
+                                    class="flex items-center justify-center min-w-[48px] h-[48px] rounded-full bg-[#F5B899] min-h-[44px] sm:min-w-[48px] sm:h-[48px] sm:min-h-[48px]">
+                                    <img src="./images/control.svg" class="w-[24px] h-[24px] sm:w-[24px] sm:h-[24px]" />
                                 </span>
                                 <div>
-                                    <h3 class="text-[18px] font-semibold mb-1">Granular Control</h3>
-                                    <p class="text-gray-600 font-noto-serif">Permission requests appear whenever the AI needs to perform a write action.</p>
+                                    <h3 class="text-[16px] sm:text-[18px] font-medium mb-1">Granular Control</h3>
+                                    <p class="text-[#000000]/60 font-noto-serif  text-[16px]">Permission requests appear whenever the AI
+                                        needs to perform a write action.</p>
                                 </div>
                             </div>
-                            <div class="flex items-start gap-4">
-                                <span class="flex items-center justify-center min-w-[48px] h-[48px] rounded-full bg-[#F5B899]">
-                                    <img src="./images/memory.svg" class="w-[24px] h-[24px]"/>
+                            <div class="flex items-start gap-3 sm:gap-4">
+                                <span
+                                    class="flex items-center justify-center min-w-[48px] h-[48px] rounded-full bg-[#F5B899]">
+                                    <img src="./images/memory.svg" class="w-[24px] h-[24px] sm:w-[24px] sm:h-[24px]" />
                                 </span>
                                 <div>
-                                    <h3 class="text-[18px] font-semibold mb-1">Permission Memory</h3>
-                                    <p class="text-gray-600 font-noto-serif">"Always allow" remembers your preferences for future interactions.</p>
+                                    <h3 class="text-[16px] sm:text-[18px] font-medium mb-1">Permission Memory</h3>
+                                    <p class="text-[#000000]/60 font-noto-serif text-[16px]">"Always allow" remembers your preferences
+                                        for future interactions.</p>
                                 </div>
                             </div>
-                            <div class="flex items-start gap-4">
-                                <span class="flex items-center justify-center min-w-[48px] h-[48px] rounded-full bg-[#F5B899]">
-                                    <img src="./images/actions.svg" />
+                            <div class="flex items-start gap-3 sm:gap-4">
+                                <span
+                                    class="flex items-center justify-center min-w-[48px] h-[48px] rounded-full bg-[#F5B899]">
+                                    <img src="./images/actions.svg" class="w-[22px] h-[22px] sm:w-[24px] sm:h-[24px]" />
                                 </span>
                                 <div>
-                                    <h3 class="text-[18px] font-semibold mb-1">Transparent Actions</h3>
-                                    <p class="text-gray-600 font-noto-serif">Clear visual cues show exactly what actions the AI is requesting.</p>
+                                    <h3 class="text-[16px] sm:text-[18px] font-medium mb-1">Transparent Actions</h3>
+                                    <p class="text-[#000000]/60 font-noto-serif text-[16px]">Clear visual cues show exactly what actions
+                                        the AI is requesting.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Image Left -->
-                    <div class="w-full lg:w-1/2 flex justify-start order-2 lg:order-1 mt-8 lg:mt-0">
-                        <img src="./images/section-3.png" class="w-auto h-auto mx-auto "/>
+                    <!-- Image Left (with overlay panel) -->
+                    <div class="w-full lg:w-1/2 flex justify-start order-2 lg:order-1 mt-8 lg:mt-0 relative">
+                        <div class="w-full h-full relative">
+                            <img src="./images/section-2.png" alt="Background"
+                                class="w-full h-full rounded-[24px] object-cover" />
+
+                            <!-- Upper text overlay -->
+                            <div
+                                class="absolute w-[calc(100%-2rem)] left-4 right-4 top-6 md:w-auto md:left-16 md:right-auto md:top-10 lg:max-w-3xl lg:top-[13%] lg:left-[150px] lg:w-[530px]">
+                                <p
+                                    class="text-[14px] leading-[24px] sm:text-[16px] sm:leading-[28px] font-normal text-[#d2bdad] font-noto-serif">
+                                    This selection spans leading national stadiums, tech-forward club venues,
+                                    and locations known for robust fan attendance and openness to innovation.
+                                    The mix of geographies and stadium profiles ensures a comprehensive, global
+                                    pipeline for piloting and scaling QR Order &amp; Pay solutions.
+                                </p>
+                                <!-- Fade overlay -->
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-b from-[#fff8f6] via-[#fff8f6]/60 to-transparent pointer-events-none">
+                                </div>
+                            </div>
+
+                            <!-- Main request panel -->
+                            <div
+                                class="absolute w-[calc(100%-2rem)] left-4 right-4 top-40 sm:top-48 md:w-[520px] md:left-16 md:right-auto md:top-56 lg:top-[30%] lg:left-[100pxpx] lg:w-[578px]">
+                                <div class="ms-auto lg:ml-[80px] ml-0 relative z-10 w-full max-w-[578px] rounded-[24px] sm:rounded-[32px] p-3 sm:p-4 font-sora border-[0.5px] border-[rgba(255,255,255,0.00)] shadow-[inset_-0.7px_-0.7px_0_0_#FFF,inset_0_0.7px_0_0_#FFF,0_26px_36px_0_rgba(0,0,0,0.15)] backdrop-blur-[3.5px]"
+                                    style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0.06) 100%), rgba(255, 255, 255, 0.40);">
+
+                                    <!-- Header -->
+                                    <div class="flex items-start justify-between mb-3">
+                                        <div>
+                                            <div class="text-[16px] sm:text-[18px] text-black font-semibold">Calling
+                                                <span class="font-medium">list_teams</span></div>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-sm text-[#00000099]">
+                                            <div
+                                                class="inline-flex items-center px-2 py-1 rounded-md text-[13px] sm:text-[14px] font-normal">
+                                                Request json
+                                                <img src="./images/section-2-arrow.svg" class="ml-1" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Request label -->
+                                    <div class="text-[12px] sm:text-[13px] text-[#141414] font-semibold mb-2">Request
+                                    </div>
+
+                                    <!-- JSON code block -->
+                                    <pre class="bg-[#EFEFEF] text-[13px] sm:text-[15px] font-mono rounded-[12px] mb-4 flex flex-col justify-start overflow-x-auto"
+                                        style="line-height:21.82px;">
+<span class="bg-[#DCDCDC] pl-1 w-[40px] text-[10px] sm:text-[11px]" style="letter-spacing: -0.11px;">json</span>
+<span class="text-[#53B559] pl-3 pt-4">{</span>
+<div class="flex items-center ml-4 pl-3 "><span class="text-[#53B559]">"limit":</span><span class="text-[#E6755D] ml-1">10</span></div>
+<div class="flex items-center ml-4 pl-3 "><span class="text-[#53B559]">"orderBy":</span><span class="text-[#E6755D] ml-1">updatedAt</span></div>
+<span class="text-[#53B559] pl-3 pb-4">}</span>
+</pre>
+
+                                    <!-- Footer -->
+                                    <div class="flex items-center justify-between">
+                                        <div class="relative">
+                                            <button
+                                                class="flex items-center gap-2 bg-[#f0f0f0] text-black px-3 py-2 rounded-[12px] shadow-sm border-[0.5px] border-white">
+                                                <span class="text-[14px] sm:text-[15px] font-medium">Always Ask</span>
+                                                <img src="./images/section-2-arrow-up.svg" />
+                                            </button>
+                                            <div
+                                                class="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-md p-2 hidden">
+                                            </div>
+                                        </div>
+
+                                        <div class="flex items-center gap-2 sm:gap-3">
+                                            <button
+                                                class="flex items-center gap-2 bg-[#e7dbd2] text-black px-3 sm:px-4 py-2 rounded-[12px] shadow-sm border-[0.5px] border-white">
+                                                <span class="text-[14px] sm:text-[15px] font-medium">Skip</span>
+                                            </button>
+                                            <button
+                                                class="flex items-center gap-2 bg-[#FDC7AF] text-black px-3 sm:px-4 py-2 rounded-[12px] shadow-sm">
+                                                <span class="text-[14px] sm:text-[15px] font-medium">Run</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Small selection panel -->
+                            <div
+                                class="absolute w-[calc(100%-2rem)] left-4 right-4 top-[75%] md:w-[340px] md:left-16 md:right-auto md:top-[70%] lg:top-[63.3%] lg:left-[150px] lg:w-[278px]">
+                                <div class="ms-auto mr-0 lg:mr-[80px] relative z-10 w-full max-w-[278px] rounded-[12px] sm:rounded-[14px] p-3 font-sora border-[0.5px] border-[rgba(255,255,255,0.00)] shadow-[inset_-0.7px_-0.7px_0_0_#FFF,inset_0_0.7px_0_0_#FFF,0_26px_36px_0_rgba(0,0,0,0.15)] backdrop-blur-[3.5px]"
+                                    style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0.06) 100%), rgba(255, 255, 255, 0.40);">
+
+                                    <div class="flex justify-between">
+                                        <div class="relative w-full">
+                                            <button
+                                                class="flex flex-col w-full bg-[#FFFFFF] text-black px-3 py-2 rounded-[12px] shadow-sm border border-white relative text-left">
+                                                <div class="flex justify-between items-start w-full">
+                                                    <span class="text-[12px] sm:text-[13px] font-medium">Always
+                                                        Ask</span>
+                                                    <img src="./images/tick.svg"
+                                                        class="w-[20px] h-[20px] sm:w-[22px] sm:h-[22px] mt-[4px]" />
+                                                </div>
+                                                <span class="text-[10px] sm:text-[11px] font-normal opacity-50 -mt-1">
+                                                    Your approval is required every time
+                                                </span>
+                                            </button>
+
+                                            <button
+                                                class="mt-2 flex flex-col items-start w-full bg-[#FFFFFF] text-black px-3 py-2 rounded-[12px] shadow-sm border-[0.5px] border-white">
+                                                <span class="text-[12px] sm:text-[13px] font-medium">Auto Run</span>
+                                                <span class="text-[10px] sm:text-[11px] font-normal opacity-[50%]">Your
+                                                    approval is not required</span>
+                                            </button>
+
+                                            <div
+                                                class="absolute left-0 mt-2 w-full bg-white rounded-lg shadow-md p-2 hidden">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
+                    <!-- /Image column -->
                 </div>
             </div>
         </section>
+
 
         <!-- permissions section -->
         <section class="py-8">
@@ -230,419 +526,787 @@
                 <div class="flex flex-col lg:flex-row items-center">
                     <!-- Content Left -->
                     <div class="w-full lg:w-1/2 px-8 sm:px-12 md:px-16 lg:px-32">
-                        <div class="inline-flex items-center gap-2 bg-[#2D0F00] px-4 py-1.5 rounded-full text-white text-[14px] mb-6">
+                        <div
+                            class="inline-flex items-center gap-2 bg-[#2D0F00] px-2 py-[2px] rounded-full text-white text-[14px] mb-3">
                             FEATURE 3
                         </div>
-                        <h2 class="text-[48px] sm:text-[44px] lg:text-[40px] font-semibold leading-tight mb-6 font-sora">
-                            Update permissions <br/> for each prompt
+                        <h2 class="text-[48px] sm:text-[44px] lg:text-[40px] font-medium leading-tight mb-4 font-sora">
+                            Update permissions <br /> for each prompt
                         </h2>
-                        <p class="text-gray-600 text-[18px] mb-8 font-noto-serif sm:pr-8 lg:pr-0">
-                            Any time, click a tool chip to view and change what's allowed. The AI can only use the tools you make available
+                        <p class="text-[#00000099] text-[18px] mb-10 font-noto-serif sm:pr-8 lg:pr-0">
+                            Any time, click a tool chip to view and change what's allowed. The AI can only use the tools
+                            you make available
                         </p>
-                        
+
                         <div class="space-y-6">
-                                                         <div class="flex items-start gap-4">
-                                <span class="flex items-center justify-center min-w-[48px] h-[48px] rounded-full bg-[#F5B899] min-h-[48px]">
-                                    <img src="./images/access.svg" class="w-[24px] h-[24px]"/>
+                            <div class="flex items-start gap-3">
+                                <span
+                                    class="flex items-center justify-center min-w-[48px] h-[48px] rounded-full bg-[#F5B899] min-h-[48px]">
+                                    <img src="./images/access.svg" class="w-[24px] h-[24px]" />
                                 </span>
                                 <div>
-                                    <h3 class="text-[18px] font-semibold mb-1">Contextual Access</h3>
-                                    <p class="text-gray-600 font-noto-serif">Different prompts may require different tool permissions. Adjust on the fly.</p>
+                                    <h3 class="text-[18px] font-medium mb-1">Contextual Access</h3>
+                                    <p class="text-[#00000099] font-noto-serif">Different prompts may require different
+                                        tool permissions. Adjust on the fly.</p>
                                 </div>
                             </div>
                             <div class="flex items-start gap-4">
-                                <span class="flex items-center justify-center min-w-[48px] h-[48px] rounded-full bg-[#F5B899]">
-                                    <img src="./images/one-click.svg" class="w-[24px] h-[24px]"/>
+                                <span
+                                    class="flex items-center justify-center min-w-[48px] h-[48px] rounded-full bg-[#F5B899]">
+                                    <img src="./images/one-click.svg" class="w-[24px] h-[24px]" />
                                 </span>
                                 <div>
-                                    <h3 class="text-[18px] font-semibold mb-1">One-Click Removal</h3>
-                                    <p class="text-gray-600 font-noto-serif">Remove tools that aren't needed for a specific task with a single click.</p>
+                                    <h3 class="text-[18px] font-medium mb-1">One-Click Removal</h3>
+                                    <p class="text-[#00000099] font-noto-serif">Remove tools that aren't needed for a
+                                        specific task with a single click.</p>
                                 </div>
                             </div>
                             <div class="flex items-start gap-4">
-                                <span class="flex items-center justify-center min-w-[48px] h-[48px] rounded-full bg-[#F5B899]">
-                                    <img src="./images/fast.svg"/>
+                                <span
+                                    class="flex items-center justify-center min-w-[48px] h-[48px] rounded-full bg-[#F5B899]">
+                                    <img src="./images/fast.svg" />
                                 </span>
                                 <div>
-                                    <h3 class="text-[18px] font-semibold mb-1">Fast Permission Updates</h3>
-                                    <p class="text-gray-600 font-noto-serif">Quickly toggle between Allow, Ask, or Deny for any action without interrupting your workflow.</p>
+                                    <h3 class="text-[18px] font-medium mb-1">Fast Permission Updates</h3>
+                                    <p class="text-[#00000099] font-noto-serif">Quickly toggle between Allow, Ask, or Deny
+                                        for any action without interrupting your workflow.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Image Right -->
-                    <div class="w-full md:w-1/2 flex justify-end">
-                        <img src="./images/section-2.png" class="w-auto h-auto max-w-full"/>
+                    <!-- Image Right feature 3 -->
+                    <div class="w-full md:w-1/2 flex mb-[70px] md:mb-0 flex-col gap-4 relative ml-[20px] md:ml-[40px]">
+                        <!-- Background Image -->
+                        <div class="w-full h-full relative">
+                            <img src="./images/feature-1.png" alt="Background" class="w-full h-full  rounded-[24px]" />
+                            <div class="absolute top-[34%] left-[40px] w-fit">
+                                <!-- Input Section -->
+                                <div class="ml-[-45px]  mb-[-25px] w-[400px] md:w-[543px] p-6 rounded-[32px] border-[0.5px] border-[rgba(255,255,255,0.00)] shadow-[inset_-0.7px_-0.7px_0_0_#FFF,inset_0_0.7px_0_0_#FFF,0_26px_36px_0_rgba(0,0,0,0.15)] backdrop-blur-[3.5px]"
+                                    style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0.06) 100%), rgba(255, 255, 255, 0.40);">
+                                    <p class="text-[16px] text-black mb-4">look what i did since yesterday on
+                                        <span class="font-semibold">@GitHub.</span>
+                                        update me <br /> about <span class="font-semibold">@Jira</span>. fetch new
+                                        issues on <span class="font-semibold">@Sentry</span>. Suggest me<br /> what to
+                                        work today.
+                                    </p>
+                                    <div class="flex items-center justify-between gap-2">
+                                        <div class="flex items-center gap-2">
+                                            <span class="text-[12px] text-black/40">@</span>
+                                            <div class="flex gap-2">
+                                                <div
+                                                    class="rounded-[24px] px-3 py-1.5 flex items-center gap-2 border-[0.5px] border-[rgba(255,255,255,0.00)] bg-[#f0f0f0] shadow-[inset_-0.7px_-0.7px_0_0_#FFF,inset_0_0.7px_0_0_#FFF,0_26px_36px_0_rgba(0,0,0,0.15)] backdrop-blur-[13px]">
+                                                    <img src="./images/git.svg" alt="GitHub" class="w-5 h-5" />
+                                                    <span class="text-[14px]">GitHub</span>
+                                                    <img src="./images/cross.svg" alt="Remove"
+                                                        class="w-2 h-2 cursor-pointer" />
+                                                </div>
+                                                <div
+                                                    class="rounded-[24px] px-3 py-1.5 flex items-center gap-2 border-[0.5px] border-[rgba(255,255,255,0.00)] bg-[rgba(217,217,217,0.40)] shadow-[inset_-0.7px_-0.7px_0_0_#FFF,inset_0_0.7px_0_0_#FFF,0_26px_36px_0_rgba(0,0,0,0.15)] backdrop-blur-[13px]">
+                                                    <img src="./images/jira.svg" alt="Jira" class="w-5 h-5" />
+                                                    <span class="text-[14px]">Jira</span>
+                                                    <img src="./images/cross.svg" alt="Remove"
+                                                        class="w-2 h-2 cursor-pointer" />
+                                                </div>
+                                                <div
+                                                    class="rounded-[24px] px-3 py-1.5 flex items-center gap-2 border-[0.5px] border-[rgba(255,255,255,0.00)] bg-[rgba(217,217,217,0.40)] shadow-[inset_-0.7px_-0.7px_0_0_#FFF,inset_0_0.7px_0_0_#FFF,0_26px_36px_0_rgba(0,0,0,0.15)] backdrop-blur-[13px]">
+                                                    <img src="./images/attlasian.svg" alt="Jira" class="w-5 h-5" />
+                                                    <span class="text-[14px]">Sentry</span>
+                                                    <img src="./images/cross.svg" alt="Remove"
+                                                        class="w-2 h-2 cursor-pointer" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center gap-2 hidden md:flex ">
+
+                                            <img src="./images/bot.svg" alt="Jira" class="w-5 h-5" />
+                                            <span
+                                                class="h-9 w-9 bg-[#121212] flex items-center justify-center rounded-full">
+                                                <img src="./images/arrow-down-1.svg" alt="Remove"
+                                                    class="w-4 h-4 cursor-pointer" /></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- App Selection Interface -->
+                                <div class="relative z-10 max-w-[246px] rounded-[24px] border-[0.5px] border-[rgba(255,255,255,0.00)] shadow-[inset_-0.5px_-0.5px_0_0_#FFF,inset_0_0.5px_0_0_#FFF] backdrop-blur-[25px] p-3 w-full"
+                                    style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0.06) 100%), rgba(255, 255, 255, 0.40);">
+                                    <!-- App List -->
+                                    <div class="space-y-3 font-sora"
+                                        style="color: #000; font-feature-settings: 'liga' off, 'clig' off;">
+                                        <div class="flex justify-between">
+                                            <div class="flex gap-2">
+                                                <img src="./images/Eye.svg" />
+                                                <span
+                                                    class="text-[11px] font-normal leading-[22px] tracking-[-0.43px] font-inter">Reads</span>
+
+                                            </div>
+                                            <img src="./images/Alt Arrow Right.svg" />
+
+                                        </div>
+                                        <!-- HubSpot -->
+
+                                        <div class="space-y-2">
+                                            <div class=" bg-[#e4d0bc]/90 rounded-[8px]">
+
+
+                                                <!-- View Contacts -->
+                                                <div class="flex justify-between items-center rounded-[12px] p-2">
+                                                    <span class="text-[13px] font-inter">View Contacts</span>
+                                                    <div
+                                                        class="flex gap-2 items-center bg-[#7878801F] rounded-[8px] p-1">
+                                                        <span class="bg-white p-1 rounded-[8px]"> <img
+                                                                src="./images/active-check-circle.svg"
+                                                                class="w-4 h-4" /></span>
+                                                        <img src="./images/inactive-danger-circle.svg"
+                                                            class="w-4 h-4" />
+                                                        <img src="./images/inactive-forbidden-circle.svg"
+                                                            class="w-4 h-4" />
+                                                    </div>
+                                                </div>
+
+                                                <hr class="border-t border-black/10 p-1" />
+                                                <!-- View Companies -->
+                                                <div class="flex justify-between items-center rounded-[12px] p-2">
+                                                    <span class="text-[13px] font-inter">View Companies</span>
+                                                    <div
+                                                        class="flex gap-2 items-center bg-[#7878801F] rounded-[8px] p-1">
+                                                        <span class="bg-white p-1 rounded-[8px]"> <img
+                                                                src="./images/active-check-circle.svg"
+                                                                class="w-4 h-4" /></span>
+                                                        <img src="./images/inactive-danger-circle.svg"
+                                                            class="w-4 h-4" />
+                                                        <img src="./images/inactive-forbidden-circle.svg"
+                                                            class="w-4 h-4" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex justify-between ">
+                                            <div class="flex gap-2 items-center">
+                                                <img src="./images/Pen.svg" class="w-3 h-3" />
+                                                <span
+                                                    class="text-[11px] font-normal leading-[22px] tracking-[-0.43px] font-inter">Changes</span>
+
+                                            </div>
+                                            <img src="./images/Alt Arrow Right.svg" />
+
+                                        </div>
+                                        <div class=" bg-[#e4d0bc]/60  rounded-[8px]">
+
+
+                                            <!-- View Contacts -->
+                                            <div class="flex justify-between items-center rounded-[12px] p-2">
+                                                <span class="text-[13px] font-inter">Delete Contacts</span>
+                                                <div class="flex gap-2 items-center bg-[#7878801F] rounded-[8px] p-1">
+                                                    <img src="./images/inactive-check-circle.svg" class="w-4 h-4" />
+                                                    <span class="bg-white p-1 rounded-[8px]"> <img
+                                                            src="./images/active-danger.svg" class="w-4 h-4" /></span>
+
+                                                    <img src="./images/inactive-forbidden-circle.svg" class="w-4 h-4" />
+                                                </div>
+                                            </div>
+
+                                            <hr class="border-t border-black/10 p-1" />
+                                            <!-- View Companies -->
+                                            <div class="flex justify-between items-center rounded-[12px] p-2">
+                                                <span class="text-[13px] font-inter">View Companies</span>
+                                                <div class="flex gap-2 items-center bg-[#7878801F] rounded-[8px] p-1">
+                                                    <span class="bg-white p-1 rounded-[8px]"> <img
+                                                            src="./images/active-check-circle.svg"
+                                                            class="w-4 h-4" /></span>
+                                                    <img src="./images/inactive-danger-circle.svg" class="w-4 h-4" />
+                                                    <img src="./images/inactive-forbidden-circle.svg" class="w-4 h-4" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Apps Integration Section -->
-<section class="w-full  flex items-center justify-center my-12">
-    <div class="container bg-[#F5B899] py-16 px-4 rounded-3xl mx-auto text-center">
-      
-      <!-- Badge -->
-      <div class="inline-flex items-center gap-2 bg-[#FFFFFF66] text-[#542208] text-[16px] font-medium px-4 py-2 rounded-full mb-6">
-        <span class="text-lg p-2 rounded-full border border-white border-[1px]"><img src="./images/ai-agent.svg" alt="bus icon"></span>
-        Connect with ease
-      </div>
-  
-      <!-- Heading -->
-      <h2 class="text-[48px] md:text-4xl font-medium text-black">
-        Add your favourite <br class="hidden md:block" />
-        <span class="font-medium"><strong>100+</strong> Apps</span>
-      </h2>
-  
-      <!-- Logos row -->
-     <div class="mt-10 flex flex-wrap justify-center gap-6">
-        <!-- Logo item -->
-        <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
-          <img src="./images/icon1.svg" alt="icon1" class="w-[38px] h-[38px]">
-        </div>
-        <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
-          <img src="./images/icon2.svg" alt="icon" class="w-[38px] h-[38px]">
-        </div>
-        <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
-          <img src="./images/icon3.svg" alt="icon" class="w-[38px] h-[38px]">
-        </div>
-        <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
-          <img src="./images/icon4.svg" alt="icon" class="w-[38px] h-[38px]">
-        </div>
-        <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
-          <img src="./images/icon5.svg" alt="icon" class="w-[38px] h-[38px]">
-        </div>
-        <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
-          <img src="./images/icon6.svg" alt="icon" class="w-[38px] h-[38px]">
-        </div>
-        <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
-          <img src="./images/icon7.svg" alt="icon" class="w-[38px] h-[38px]">
-        </div>
-        <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
-          <img src="./images/icon8.svg" alt="icon" class="w-[38px] h-[38px]">
-        </div>
-        <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
-          <img src="./images/icon9.svg" alt="icon" class="w-[38px] h-[38px]">
-        </div>
-        <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
-          <img src="/images/clickup.svg" alt="icon" class="w-[38px] h-[38px]">
-        </div>
-        <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
-          <img src="./images/icon11.svg" alt="icon" class="w-[38px] h-[38px]">
-        </div>
-        <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
-          <img src="./images/icon12.svg" alt="icon" class="w-[38px] h-[38px]">
-        </div>
-        <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
-          <img src="./images/icon13.svg" alt="icon" class="w-[38px] h-[38px]">
-        </div>
-      </div>
-    </div>
-  </section>
+        <section class="w-[90%] flex items-center justify-center mt-[60px] mb-[120px] mx-auto  relative">
+            <!-- Background SVG -->
+            <div class="absolute inset-0 w-full h-full">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1281 399" fill="none" class="w-full h-full"
+                    preserveAspectRatio="none">
+                    <g filter="url(#filter0_n_3_889)">
+                        <rect width="1281" height="399" rx="24" fill="#F5B899" />
+                    </g>
+                    <defs>
+                        <filter id="filter0_n_3_889" x="0" y="0" width="1281" height="399" filterUnits="userSpaceOnUse"
+                            color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                            <feTurbulence type="fractalNoise" baseFrequency="2 2" stitchTiles="stitch" numOctaves="3"
+                                result="noise" seed="6470" />
+                            <feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise" />
+                            <feComponentTransfer in="alphaNoise" result="coloredNoise1">
+                                <feFuncA type="discrete"
+                                    tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 " />
+                            </feComponentTransfer>
+                            <feComposite operator="in" in2="shape" in="coloredNoise1" result="noise1Clipped" />
+                            <feFlood flood-color="#FFDBC9" result="color1Flood" />
+                            <feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1" />
+                            <feMerge result="effect1_noise_3_889">
+                                <feMergeNode in="shape" />
+                                <feMergeNode in="color1" />
+                            </feMerge>
+                        </filter>
+                    </defs>
+                </svg>
+            </div>
+            <div class="container relative py-4 md:py-[66px] md:px-[60px] px-2 rounded-3xl mx-3 md:mx-auto text-center">
 
-  <!-- Full-width Card Slider -->
- <section class="w-full bg-[#FFEADF] flex items-center justify-center">
+                <!-- Badge -->
+                <div
+                    class="inline-flex items-center gap-2 pl-2 pr-4 py-2 rounded-[100px] text-[#542208] text-[16px] font-medium mb-6 border-[0.5px] border-[rgba(255,255,255,0.00)] bg-[rgba(255,255,255,0.40)] shadow-[inset_-0.7px_-0.7px_0_0_#FFF,inset_0_0.7px_0_0_#FFF,0_12px_38px_0_rgba(0,0,0,0.15)] backdrop-blur-[3.5px]">
+                    <span class="rounded-[100px] p-2 border-white/0"
+                        style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0.06) 100%), rgba(255, 255, 255, 0.40); box-shadow: -0.7px -0.7px 0 0 #FFF inset, 0 0.7px 0 0 #FFF inset, 0 12px 38px 0 rgba(0, 0, 0, 0.15); backdrop-filter: blur(3.5px);">
+                        <img src="./images/ai-agent.svg" alt="AI Agent" class="w-6 h-6" />
+                    </span>
+                    Connect with ease
+                </div>
+
+                <!-- Heading -->
+                <h2 class="text-[48px] md:text-4xl font-medium text-black">
+                    Add your favourite <br class="hidden md:block" />
+                    <span class="font-medium"><strong>100+</strong> Apps</span>
+                </h2>
+
+                <!-- Logos row -->
+                <div class="mt-10  flex flex-wrap justify-center gap-6">
+                    <!-- Logo item -->
+                    <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
+                        <img src="./images/icon1.svg" alt="icon1" class="w-[38px] h-[38px]">
+                    </div>
+                    <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
+                        <img src="./images/icon2.svg" alt="icon" class="w-[38px] h-[38px]">
+                    </div>
+                    <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
+                        <img src="./images/icon3.svg" alt="icon" class="w-[38px] h-[38px]">
+                    </div>
+                    <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
+                        <img src="./images/icon4.svg" alt="icon" class="w-[38px] h-[38px]">
+                    </div>
+                    <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
+                        <img src="./images/icon5.svg" alt="icon" class="w-[38px] h-[38px]">
+                    </div>
+                    <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
+                        <img src="./images/icon6.svg" alt="icon" class="w-[38px] h-[38px]">
+                    </div>
+                    <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
+                        <img src="./images/icon7.svg" alt="icon" class="w-[38px] h-[38px]">
+                    </div>
+                    <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
+                        <img src="./images/icon8.svg" alt="icon" class="w-[38px] h-[38px]">
+                    </div>
+                    <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
+                        <img src="./images/icon9.svg" alt="icon" class="w-[38px] h-[38px]">
+                    </div>
+                    <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
+                        <img src="/images/clickup.svg" alt="icon" class="w-[38px] h-[38px]">
+                    </div>
+                    <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
+                        <img src="./images/icon11.svg" alt="icon" class="w-[38px] h-[38px]">
+                    </div>
+                    <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
+                        <img src="./images/icon12.svg" alt="icon" class="w-[38px] h-[38px]">
+                    </div>
+                    <div class="w-[60px] h-[60px] rounded-full bg-white shadow flex items-center justify-center">
+                        <img src="./images/icon13.svg" alt="icon" class="w-[38px] h-[38px]">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pricing Disclaimer -->
+
+        </section>
+
+        <!-- Full-width Card Slider -->
+        <section class="w-full bg-[#FFEADF] flex items-center justify-center">
 
 
-    <section class="py-10 container">
-       <div class=" flex items-center justify-between w-full md:my-16 my-4 px-4 flex-col md:flex-row ">
-               <h2 class="text-4xl md:text-5xl text-black font-medium mb-5 md:hidden text-center">Trusted by product Lovers</h2>
+            <section class="py-[110px] container">
+                <div class=" flex items-center justify-between w-full md:mb-16 my-4 px-4 flex-col md:flex-row ">
+                    <h2 class="text-4xl md:text-5xl text-black font-medium mb-5 md:hidden text-center">Trusted by
+                        product Lovers</h2>
 
-         <h2 class="text-4xl md:text-5xl text-black font-medium mb-5 hidden md:flex">Trusted by <br> product Lovers</h2>
-         <div class=" flex flex-col gap-2"><p class=" text-black text-base hidden md:flex">Pale is built on the core habits of top-performing <br>product teams: staying focused, moving fast, and <br> delivering exceptional work.</p>
-         <div class=" flex flex-col gap-2"><p class=" text-black text-base md:hidden">Pale is built on the core habits of top-performing product teams: staying focused, moving fast, and delivering exceptional work.</p>
-        
-            <button class="bg-white font-bold text-base text-black px-1 py-2 rounded my-5">Read our Customer Stories →</button>
-        </div>
-    </div>
-        </div>
+                    <h2 class="text-4xl md:text-5xl text-black font-medium mb-5 hidden md:flex">Trusted by <br> product
+                        Lovers</h2>
+                    <div class=" flex flex-col gap-2">
+                        <p class=" text-[#00000099] text-base hidden md:flex font-noto-serif">Pale is built on the core habits of
+                            top-performing <br>product teams: staying focused, moving fast, and <br> delivering
+                            exceptional work.</p>
+                        <div class=" flex flex-col gap-2">
+                            <p class=" text-[#00000099] text-base md:hidden">Pale is built on the core habits of
+                                top-performing product teams: staying focused, moving fast, and delivering exceptional
+                                work.</p>
 
-             <div id="cards-swiper" class="swiper relative w-full" 
-            style="--swiper-theme-color:#000; --swiper-navigation-size:16px;">
-         <div class="swiper-wrapper">
-     
-           <!-- Slide 1 -->
-           <div class="swiper-slide px-4">
-             <article class="rounded-[24px] overflow-hidden bg-white border-2 border-black shadow-[0_0_0_4px_rgba(0,0,0,1)] transition-all duration-300">
-               <img src="./images/slide1.png" alt="Alex Chen" class="w-full aspect-[4/3] object-cover">
-               <div class="p-8">
-                 <p class="text-[18px] font-medium mb-6">
-                   Thanks to Pale, we're uncovering new leads we never could have found through traditional legal channels.
-                 </p>
-                 <div>
-                   <p class="font-semibold">Alex Chen</p>
-                   <p class="text-gray-600">Operations Director</p>
-                 </div>
-               </div>
-             </article>
-           </div>
-     
-           <!-- Slide 2 -->
-           <div class="swiper-slide px-4">
-             <article class="rounded-[24px] overflow-hidden bg-white border-2 border-[#F5B899] shadow-[0_0_0_4px_rgba(245,184,153,1)]">
-               <img src="./images/slide2.png" alt="Ben Carter" class="w-full aspect-[4/3] object-cover grayscale">
-               <div class="p-8">
-                 <p class="text-[18px] font-medium mb-6">
-                   Running in Founder Mode is challenging enough without a truly great project management app.
-                 </p>
-                 <div>
-                   <p class="font-semibold">Ben Carter</p>
-                   <p class="text-gray-600">Marketing Lead</p>
-                 </div>
-               </div>
-             </article>
-           </div>
-     
-           <!-- Slide 3 -->
-           <div class="swiper-slide px-4">
-             <article class="rounded-[24px] overflow-hidden bg-white border-2 border-[#F5B899] shadow-[0_0_0_4px_rgba(245,184,153,1)]">
-               <img src="./images/slide3.png" alt="Cameron Wil" class="w-full aspect-[4/3] object-cover grayscale">
-               <div class="p-8">
-                 <p class="text-[18px] font-medium mb-6">
-                   Founder Mode is tough—having an exceptional project management app makes all the difference.
-                 </p>
-                 <div>
-                   <p class="font-semibold">Cameron Wil</p>
-                   <p class="text-gray-600">Product Manager</p>
-                 </div>
-               </div>
-             </article>
-           </div>
-         </div>
-     
-         <!-- Controls bar -->
-         <div class="flex items-center justify-between mt-12">
-           <!-- Dots -->
-           <div class="swiper-pagination !static !w-auto flex items-center"></div>
-       
-           <!-- Arrows -->
-           <div class="flex items-center gap-3">
-             <button class="swiper-button-prev !static !w-8 !h-8 !bg-white border border-black rounded-full flex items-center justify-center after:!text-xs hover:bg-gray-50"><img src="./images/left.svg"/></button>
-             <button class="swiper-button-next !static !w-8 !h-8 !bg-white border border-black rounded-full flex items-center justify-center after:!text-xs hover:bg-gray-50"><img src="./images/right.svg"/></button>
-           </div>
-         </div>
-      </div>
-    </section>
+       <button class="w-fit bg-white border border-[#E5E5E5] font-bold text-base text-[#09090B] px-4 py-2 rounded-[4px] my-5 flex items-center gap-4 shadow-sm">
+  Read our Customer Stories
+  <img src="./images/arrow.svg" alt="icon" class="w-[16px] h-[16px]">
+</button>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div id="cards-swiper" class="swiper relative w-full my-2"
+                    style="--swiper-theme-color:#000; --swiper-navigation-size:16px;">
+                    <div class="swiper-wrapper">
+
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide px-4 py-2">
+                            <article
+                                class="rounded-[24px] overflow-hidden bg-white border-2 border-[#F5B899] shadow-[0_0_0_4px_rgba(245,184,153,1)] transition-all duration-300 slide-article">
+                                <img src="./images/slide1.png" alt="Alex Chen" class="w-full aspect-[4/3] ">
+                                <div class="p-8">
+                                    <p class="text-[18px] font-medium mb-6">
+                                        Thanks to Pale, we're uncovering new leads we never could have found through
+                                        traditional legal channels.
+                                    </p>
+                                    <div>
+                                        <p class="font-semibold">Alex Chen</p>
+                                        <p class="text-[#00000099] font-noto-serif">Operations Director</p>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide px-4 py-2">
+                            <article
+                                class="rounded-[24px] overflow-hidden bg-white border-2 border-[#F5B899] shadow-[0_0_0_4px_rgba(245,184,153,1)] transition-all duration-300 slide-article">
+                                <img src="./images/slide2.png" alt="Ben Carter" class="w-full aspect-[4/3]  grayscale">
+                                <div class="p-8">
+                                    <p class="text-[18px] font-medium mb-6">
+                                        Running in Founder Mode is challenging enough without a truly great project
+                                        management app.
+                                    </p>
+                                    <div>
+                                        <p class="font-semibold">Ben Carter</p>
+                                        <p class="text-[#00000099] font-noto-serif">Marketing Lead</p>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide px-4 py-2">
+                            <article
+                                class="rounded-[24px] overflow-hidden bg-white border-2 border-[#F5B899] shadow-[0_0_0_4px_rgba(245,184,153,1)] transition-all duration-300 slide-article">
+                                <img src="./images/slide3.png" alt="Cameron Wil" class="w-full aspect-[4/3]  grayscale">
+                                <div class="p-8">
+                                    <p class="text-[18px] font-medium mb-6">
+                                        Founder Mode is tough—having an exceptional project management app makes all the
+                                        difference.
+                                    </p>
+                                    <div>
+                                        <p class="font-semibold">Cameron Wil</p>
+                                        <p class="text-[#00000099] font-noto-serif">Product Manager</p>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <!-- Controls bar -->
+                    <div class="flex items-center justify-between mt-12">
+                        <!-- Dots -->
+                        <div class="swiper-pagination !static !w-auto flex items-center"></div>
+
+                        <!-- Arrows -->
+                        <div class="flex items-center gap-3">
+                            <button type="button"
+                                class="swiper-button-prev !static w-[44px] h-[44px] bg-white/40 border border-[#E5E5E5] rounded-[33554400px] flex items-center justify-center after:!content-[''] shadow-[0_1px_2px_0_rgba(0,0,0,0.05)] p-[1px]"
+                                aria-label="Previous slide">
+                                <img src="./images/left-1.svg" alt="Previous" class="w-4 h-4" />
+                            </button>
+                            <button type="button"
+                                class="swiper-button-next !static w-[44px] h-[44px] bg-white/40 border border-[#E5E5E5] rounded-[33554400px] flex items-center justify-center after:!content-[''] shadow-[0_1px_2px_0_rgba(0,0,0,0.05)] p-[1px]"
+                                aria-label="Next slide">
+                                <img src="./images/right-1.svg" alt="Next" class="w-4 h-4" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </section>
 
         <!-- Plans Section -->
-<section class="bg-[#fff8f5] h-auto flex flex-col items-center justify-center py-4 md:py-8 font-sora">
-  <h2 class="text-[48px] md:text-3xl font-medium  mb-2 text-center" style="letter-spacing: -1.5px;">Plans that grow with you</h2>
-  <p class="text-gray-400 text-center text-[18px] font-noto-serif md:text-base">Empower your team for free. Upgrade to unlock the full potential of Pale with <br class="hidden md:block"> unlimited issues, advanced security, and exclusive features.</p>
+        <section class="bg-[#fff8f5] h-auto flex flex-col items-center justify-center py-4 md:pt-[100px] font-sora">
+            <h2 class="text-[48px] font-medium mb-2 text-center"
+                style="letter-spacing: -1.5px; background: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.80) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                Plans that grow with you</h2>
+            <p class="text-center text-[18px] font-noto-serif"
+                style="color: rgba(0, 0, 0, 0.60); letter-spacing: 0.36px;">Empower your team for free. Upgrade to
+                unlock the full potential of Pale with <br class="hidden md:block"> unlimited issues, advanced security,
+                and exclusive features.</p>
 
-  <!-- Toggle Tabs -->
-<div class="tabs">
-<div class="flex mt-5">
-  <ul class="flex bg-[#F5B8994D] rounded-full transition-all duration-300 px-0 overflow-hidden">
-    <li>
-      <a href="javascript:void(0)" class="inline-block py-2 px-2 text-[#542208] hover:text-[#3d1906] bg-[#D9D9D966] border border-white border-[1px] rounded-full font-medium tab-active:bg-white tab-active:rounded-xl tab-active:text-[#542208] tablink whitespace-nowrap" data-tab="tabs-with-background-1" role="tab">Individual</a>
-    </li>
-    <li>
-      <a href="javascript:void(0)" class="inline-block py-2 px-2 text-[#542208] hover:text-[#3d1906] font-medium tab-active:bg-white tab-active:rounded-xl tab-active:text-[#542208] tablink whitespace-nowrap" data-tab="tabs-with-background-2" role="tab">Team & Enterprise</a>
-    </li>
-  </ul>
-</div>
-</div>
+            <!-- Toggle Tabs -->
+            <div class="tabs">
+                <div class="flex mt-5">
+                    <ul class="flex bg-[#F5B899] bg-opacity-30 rounded-full transition-all duration-300 ">
+                        <!-- Individual Tab (Styled) -->
+                        <li class="">
+                            <a href="javascript:void(0)"
+                                class="inline-block p-4 text-[#542208] hover:text-[#3d1906] font-medium tablink whitespace-nowrap rounded-[100px] border border-white/0"
+                                style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0.06) 100%), rgba(255, 255, 255, 0.40);
+              box-shadow: -0.7px -0.7px 0 0 #FFF inset, 0 0.7px 0 0 #FFF inset, 0 12px 38px 0 rgba(0, 0, 0, 0.15);
+              backdrop-filter: blur(3.5px);" data-tab="tabs-with-background-1" role="tab">
+                                Individual
+                            </a>
+                        </li>
 
-  <!-- Plans Cards -->
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-8 md:mt-12 w-full max-w-6xl px-4">
-      <!-- Free Plan (Left Card) -->
-      <div class="bg-[#fef2ed] p-6 rounded-2xl text-left border border-gray-300 flex flex-col items-start h-full">
-          <div>
-              <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-1">Free</h3>
-              <p class="text-gray-500 text-sm mb-1">Try Pale</p>
-              <p class="text-2xl md:text-3xl font-bold text-[#2D0F00] mb-4">$0<span class="text-sm font-normal text-gray-600"> / month billed annually</span></p>
-              <button class="bg-white text-[#2D0F00] w-full my-4 px-6 py-2 text-center rounded-full font-medium text-left hover:bg-gray-100 transition duration-300">Get a Free plan</button>
-              <ul class="space-y-2 flex flex-col gap-1 text-gray-700 mb-6">
-                  <li class="flex items-start font-medium text-sm"><span class="w-4 h-2 mr-1 text-[#2D0F00] text-sm font-bold">✓</span> Chat on web, iOS, and Android</li>
-                  <li class="flex items-start font-medium text-sm"><span class="w-4 h-2 mr-1 text-[#2D0F00] text-sm font-bold">✓</span> Generate code and visualize data</li>
-                  <li class="flex items-start font-medium text-sm"><span class="w-4 h-2 mr-1 text-[#2D0F00] text-sm font-bold">✓</span> Write, edit, and create content</li>
-                  <li class="flex items-start font-medium text-sm"><span class="w-4 h-2 mr-1 text-[#2D0F00] text-sm font-bold">✓</span> Analyze text and images</li>
-                  <li class="flex items-start font-medium text-sm"><span class="w-4 h-2 mr-1 text-[#2D0F00] text-sm font-bold">✓</span> Ability to search the web</li>
-              </ul>
-          </div>
-      </div>
+                        <!-- Team & Enterprise Tab (Simple) -->
+                        <li class="">
+                            <a href="javascript:void(0)"
+                                class="inline-block p-4 text-[#542208] hover:text-[#3d1906] font-medium tablink whitespace-nowrap"
+                                data-tab="tabs-with-background-2" role="tab">
+                                Team & Enterprise
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
-      <!-- Pro Plan (Center Card) -->
-      <div class="bg-white p-6 rounded-2xl text-left border border-[#2D0F00] border-[2px] outline outline-[#F1B697] outline-[8px] flex flex-col items-start h-full">
-          <div>
-              <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-1">Pro</h3>
-              <p class="text-gray-500 text-sm mb-2">For everyday productivity</p>
-              <p class="text-2xl md:text-3xl font-bold text-[#2D0F00] mb-4">$17<span class="text-sm font-normal text-gray-600"> / month billed annually</span></p>
-              <button class="bg-[#FDC7AF] text-[#2D0F00] w-full text-center my-4 px-6 py-2 rounded-full font-medium text-left hover:bg-orange-200 transition duration-300">Get a Pro plan</button>
-              <ul class="space-y-2 flex flex-col gap-1 text-gray-700 mb-6">
-                  <li class="flex items-start font-medium text-sm"><span class="w-4 h-2 mr-1 text-[#2D0F00] text-sm font-bold">✓</span> More usage</li>
-                  <li class="flex items-start font-medium text-sm"><span class="w-4 h-2 mr-1 text-[#2D0F00] text-sm font-bold">✓</span> Access Pale directly in your terminal</li>
-                  <li class="flex items-start font-medium text-sm"><span class="w-4 h-2 mr-1 text-[#2D0F00] text-sm font-bold">✓</span> Access to unlimited Projects to organize chats and documents</li>
-                  <li class="flex items-start font-medium text-sm"><span class="w-4 h-2 mr-1 text-[#2D0F00] text-sm font-bold">✓</span> Access to Research</li>
-                  <li class="flex items-start font-medium text-sm"><span class="w-4 h-2 mr-1 text-[#2D0F00] text-sm font-bold">✓</span> Connect Google Workspace: email, calendar, and docs</li>
-                  <li class="flex items-start font-medium text-sm"><span class="w-4 h-2 mr-1 text-[#2D0F00] text-sm font-bold">✓</span> Connect any context or tool through Integrations with remote MCP</li>
-                  <li class="flex items-start font-medium text-sm"><span class="w-4 h-2 mr-1 text-[#2D0F00] text-sm font-bold">✓</span> Extended thinking for complex work</li>
-                  <li class="flex items-start font-medium text-sm"><span class="w-4 h-2 mr-1 text-[#2D0F00] text-sm font-bold">✓</span> Ability to use more Pale models</li>
-              </ul>
-          </div>
-      </div>
+            <!-- Plans Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-[18px] mt-8 md:mt-12 w-full max-w-6xl px-4">
+                <!-- Free Plan (Left Card) -->
+                <div
+                    class="bg-[#fef2ed] p-6 rounded-2xl text-left border border-gray-300 flex flex-col items-start h-full">
+                    <div>
+                        <h3 class="font-sora text-[24px] font-semibold leading-[34.4px] text-black mb-1">Free</h3>
+                        <p class="font-noto-serif text-[14px] tracking-[0.7px] mb-4"
+                            style="color: rgba(0, 0, 0, 0.60);">Try Pale</p>
+                        <p class="font-sora text-[25.8px] font-bold leading-[34.4px] text-[#2D0F00] mb-6">$0<span
+                                class="font-noto-serif text-[12px] font-normal leading-[19px] text-[#666]"> / month
+                                billed annually</span></p>
+                        <button
+                            class="flex justify-center items-center w-full h-[40px] mb-6 px-[4px] py-[10px] rounded-[100px] border border-[#E5E5E5] bg-white shadow-[0_1px_2px_0_rgba(0,0,0,0.05)] text-[#2D0F00] font-medium hover:bg-gray-50 transition-all">Get
+                            a Free plan</button>
+                        <ul class="space-y-2 flex flex-col gap-4 text-[#00000099] mb-6">
+                            <li class="flex items-start gap-2 font-noto-serif text-[14px] font-normal"
+                                style="color: rgba(0, 0, 0, 0.60);"><img src="./images/check.svg" alt="check"
+                                    class="w-4 h-4 flex-shrink-0" /> Chat on web, iOS, and Android</li>
+                            <li class="flex items-start gap-2 font-noto-serif text-[14px] font-normal"
+                                style="color: rgba(0, 0, 0, 0.60);"><img src="./images/check.svg" alt="check"
+                                    class="w-4 h-4 flex-shrink-0" /> Generate code and visualize data</li>
+                            <li class="flex items-start gap-2 font-noto-serif text-[14px] font-normal"
+                                style="color: rgba(0, 0, 0, 0.60);"><img src="./images/check.svg" alt="check"
+                                    class="w-4 h-4 flex-shrink-0" /> Write, edit, and create content</li>
+                            <li class="flex items-start gap-2 font-noto-serif text-[14px] font-normal"
+                                style="color: rgba(0, 0, 0, 0.60);"><img src="./images/check.svg" alt="check"
+                                    class="w-4 h-4 flex-shrink-0" /> Analyze text and images</li>
+                            <li class="flex items-start gap-2 font-noto-serif text-[14px] font-normal"
+                                style="color: rgba(0, 0, 0, 0.60);"><img src="./images/check.svg" alt="check"
+                                    class="w-4 h-4 flex-shrink-0" /> Ability to search the web</li>
+                        </ul>
+                    </div>
+                </div>
 
-      <!-- Max Plan (Right Card) -->
-      <div class="bg-[#fef2ed] p-6 rounded-2xl text-left border border-gray-300 flex flex-col items-start h-full">
-          <div>
-              <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-1">Max</h3>
-              <p class="text-gray-500 text-sm mb-2">5-20x more usage than Pro</p>
-              <p class="text-2xl md:text-3xl font-bold text-[#2D0F00] mb-4">From $100<span class="text-sm font-normal text-gray-600"> / month billed monthly</span></p>
-              <button class="bg-white text-[#2D0F00] w-full my-4 px-6 py-2 text-center rounded-full font-medium text-left hover:bg-gray-100 transition duration-300">Get Max plan</button>
-              <ul class="space-y-2 flex flex-col gap-1 text-gray-700 mb-6">
-                  <li class="flex items-start font-medium text-sm"><span class="w-4 h-2 mr-1 text-[#2D0F00] text-sm font-bold">✓</span> Choose 5x or 20x more usage than Pro</li>
-                  <li class="flex items-start font-medium text-sm"><span class="w-4 h-2 mr-1 text-[#2D0F00] text-sm font-bold">✓</span> Higher output limits for all tasks</li>
-                  <li class="flex items-start font-medium text-sm"><span class="w-4 h-2 mr-1 text-[#2D0F00] text-sm font-bold">✓</span> Early access to advanced Pale features</li>
-                  <li class="flex items-start font-medium text-sm"><span class="w-4 h-2 mr-1 text-[#2D0F00] text-sm font-bold">✓</span> Priority access at high traffic times</li>
-              </ul>
-          </div>
-      </div>
-  </div>
-</section>
+                <!-- Pro Plan (Center Card) -->
+                <div
+                    class="bg-white p-6 rounded-2xl text-left border border-[#2D0F00] border-[2px] outline outline-[#F1B697] outline-[8px] flex flex-col items-start h-full">
+                    <div>
+                        <h3 class="font-sora text-[24px] font-semibold leading-[34.4px] text-black mb-1">Pro</h3>
+                        <p class="font-noto-serif text-[14px] tracking-[0.7px] mb-4"
+                            style="color: rgba(0, 0, 0, 0.60);">For everyday productivity</p>
+                        <p class="font-sora text-[25.8px] font-bold leading-[34.4px] text-[#2D0F00] mb-6">$17<span
+                                class="font-noto-serif text-[12px] font-normal leading-[19px] text-[#666]"> / month
+                                billed annually</span></p>
+                        <button
+                            class="flex justify-center items-center w-full h-[43px] px-4 py-2 gap-2 rounded-[100px] border-[0.5px] border-[rgba(255,255,255,0.00)] bg-[#FDC7AF] shadow-[inset_-0.7px_-0.7px_0_0_rgba(255,255,255,0.20),inset_0_0.7px_0_0_rgba(255,255,255,0.20),0_2px_4px_0_rgba(0,0,0,0.10)] backdrop-blur-[13px] text-[#2D0F00] font-medium hover:bg-[#fbd4c2] transition-all mb-6">Get
+                            a Pro plan</button>
+                        <ul class="space-y-2 flex flex-col gap-4 text-[#00000099] mb-6">
+                            <li class="flex items-start gap-2 font-noto-serif text-[14px] font-normal"
+                                style="color: rgba(0, 0, 0, 0.60);"><img src="./images/check.svg" alt="check"
+                                    class="w-4 h-4 flex-shrink-0" /> More usage</li>
+                            <li class="flex items-start gap-2 font-noto-serif text-[14px] font-normal"
+                                style="color: rgba(0, 0, 0, 0.60);"><img src="./images/check.svg" alt="check"
+                                    class="w-4 h-4 flex-shrink-0" /> Access Pale directly in your terminal</li>
+                            <li class="flex items-start gap-2 font-noto-serif text-[14px] font-normal"
+                                style="color: rgba(0, 0, 0, 0.60);"><img src="./images/check.svg" alt="check"
+                                    class="w-4 h-4 flex-shrink-0" /> Access to unlimited Projects to organize chats and
+                                documents</li>
+                            <li class="flex items-start gap-2 font-noto-serif text-[14px] font-normal"
+                                style="color: rgba(0, 0, 0, 0.60);"><img src="./images/check.svg" alt="check"
+                                    class="w-4 h-4 flex-shrink-0" /> Access to Research</li>
+                            <li class="flex items-start gap-2 font-noto-serif text-[14px] font-normal"
+                                style="color: rgba(0, 0, 0, 0.60);"><img src="./images/check.svg" alt="check"
+                                    class="w-4 h-4 flex-shrink-0" /> Connect Google Workspace: email, calendar, and docs
+                            </li>
+                            <li class="flex items-start gap-2 font-noto-serif text-[14px] font-normal"
+                                style="color: rgba(0, 0, 0, 0.60);"><img src="./images/check.svg" alt="check"
+                                    class="w-4 h-4 flex-shrink-0" /> Connect any context or tool through Integrations
+                                with remote MCP</li>
+                            <li class="flex items-start gap-2 font-noto-serif text-[14px] font-normal"
+                                style="color: rgba(0, 0, 0, 0.60);"><img src="./images/check.svg" alt="check"
+                                    class="w-4 h-4 flex-shrink-0" /> Extended thinking for complex work</li>
+                            <li class="flex items-start gap-2 font-noto-serif text-[14px] font-normal"
+                                style="color: rgba(0, 0, 0, 0.60);"><img src="./images/check.svg" alt="check"
+                                    class="w-4 h-4 flex-shrink-0" /> Ability to use more Pale models</li>
+                        </ul>
+                    </div>
+                </div>
 
-<section class="py-16 md:py-24 bg-[#fff8f5]">
-  <div class="container mx-auto px-4 max-w-[973px]">
-      <!-- Main Headline -->
-      <div class="text-center mb-12">
-          <h2 class="text-3xl md:text-5xl font-medium text-gray-900 mb-4">Can you guarantee that</h2>
-          <h2 class="text-3xl md:text-5xl font-medium text-gray-800">you are not training on our data?</h2>
-      </div>
-      
-      <!-- Flex Layout for Questions and Accordion -->
-      <div class="flex flex-col md:flex-row items-start justify-center gap-8 md:gap-16 max-h-[475px]">
-          <!-- Left Column (Questions and Button) -->
-          <div class="w-full md:w-[220px] flex-shrink-0">
-              <h3 class="text-2xl font-semibold text-gray-800 mb-6">Still have questions?</h3>
-              <p class="text-gray-600 mb-8">Reach out to our founders anytime.</p>
-              <a href="#" class="inline-block bg-[#FDC7AF] text-gray-800 px-6 py-3 rounded-full font-semibold hover:bg-orange-200 transition duration-300">Let's talk →</a>
-          </div>
-          
-          <!-- Right Column (Accordion) -->
-          <div class="w-full md:w-[772px] flex-grow">
-              <div class="space-y-6 font-noto-serif">
-                  <div class="accordion-item border-b border-gray-200 cursor-pointer">
-                      <div class="flex justify-between items-center py-0 transition-all duration-300  rounded-lg">
-                          <span class="text-lg font-medium text-gray-700">What workflows can I automate with AI?</span>
-                          <span class="text-gray-400 text-base transform transition-transform duration-300"><img src="./images/arrow-down.svg"/></span>
-                      </div>
-                      <div class="accordion-content mt-2 text-gray-600 text-sm overflow-hidden max-h-0 transition-max-height duration-300">
-                          <p class="pt-4 pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                      </div>
-                  </div>
-                  <div class="accordion-item border-b border-gray-200 cursor-pointer">
-                      <div class="flex justify-between items-center py-0 transition-all duration-300  rounded-lg">
-                          <span class="text-lg font-medium text-gray-700">Why not use existing automation platforms?</span>
-                          <span class="text-gray-400 text-base transform transition-transform duration-300"><img src="./images/arrow-down.svg"/></span>
-                      </div>
-                      <div class="accordion-content mt-2 text-gray-600 text-sm overflow-hidden max-h-0 transition-max-height duration-300">
-                          <p class="pt-4 pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                      </div>
-                  </div>
-                  <div class="accordion-item border-b border-gray-200 cursor-pointer">
-                      <div class="flex justify-between items-center py-0 transition-all duration-300 rounded-lg">
-                          <span class="text-lg font-medium text-gray-700">Is it free?</span>
-                          <span class="text-gray-400 text-base transform transition-transform duration-300"><img src="./images/arrow-down.svg"/></span>
-                      </div>
-                      <div class="accordion-content mt-2 text-gray-600 text-sm overflow-hidden max-h-0 transition-max-height duration-300">
-                          <p class="pt-4 pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                      </div>
-                  </div>
-                  <div class="accordion-item border-b border-gray-200 cursor-pointer">
-                      <div class="flex justify-between items-center py-0 transition-all duration-300 rounded-lg">
-                          <span class="text-lg font-medium text-gray-700">How do I get started?</span>
-                          <span class="text-gray-400 text-base transform transition-transform duration-300"><img src="./images/arrow-down.svg"/></span>
-                      </div>
-                      <div class="accordion-content mt-2 text-gray-600 text-sm overflow-hidden max-h-0 transition-max-height duration-300">
-                          <p class="pt-4 pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                      </div>
-                  </div>
-                  <div class="accordion-item border-b border-gray-200 cursor-pointer">
-                      <div class="flex justify-between items-center py-0 transition-all duration-300 rounded-lg">
-                          <span class="text-lg font-medium text-gray-700">What's your policy on file upload privacy?</span>
-                          <span class="text-gray-400 text-base transform transition-transform duration-300"><img src="./images/arrow-down.svg"/></span>
-                      </div>
-                      <div class="accordion-content mt-2 text-gray-600 text-sm overflow-hidden max-h-0 transition-max-height duration-300">
-                          <p class="pt-4 pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-</section>
+                <!-- Max Plan (Right Card) -->
+                <div
+                    class="bg-[#fef2ed] p-6 rounded-2xl text-left border border-gray-300 flex flex-col items-start h-full">
+                    <div>
+                        <h3 class="font-sora text-[24px] font-semibold leading-[34.4px] text-black mb-1">Max</h3>
+                        <p class="font-noto-serif text-[14px] tracking-[0.7px] mb-4"
+                            style="color: rgba(0, 0, 0, 0.60);">5-20x more usage than Pro</p>
+                        <p class="font-sora text-[25.8px] font-bold leading-[34.4px] text-[#2D0F00] mb-6">From $100<span
+                                class="font-noto-serif text-[12px] font-normal leading-[19px] text-[#666]"> / month
+                                billed monthly</span></p>
+                        <button
+                            class=" bg-white shadow-[0_1px_2px_0_rgba(0,0,0,0.05)] text-[#2D0F00] w-full px-6 py-2 text-center rounded-full font-medium text-left hover:bg-gray-100  transition duration-300 mb-6">Get
+                            Max plan</button>
+                        <ul class="space-y-2 flex flex-col gap-4 text-[#00000099] mb-6">
+                            <li class="flex items-start gap-2 font-noto-serif text-[14px] font-normal"
+                                style="color: rgba(0, 0, 0, 0.60);"><img src="./images/check.svg" alt="check"
+                                    class="w-4 h-4 flex-shrink-0" /> Choose 5x or 20x more usage than Pro</li>
+                            <li class="flex items-start gap-2 font-noto-serif text-[14px] font-normal"
+                                style="color: rgba(0, 0, 0, 0.60);"><img src="./images/check.svg" alt="check"
+                                    class="w-4 h-4 flex-shrink-0" /> Higher output limits for all tasks</li>
+                            <li class="flex items-start gap-2 font-noto-serif text-[14px] font-normal"
+                                style="color: rgba(0, 0, 0, 0.60);"><img src="./images/check.svg" alt="check"
+                                    class="w-4 h-4 flex-shrink-0" /> Early access to advanced Pale features</li>
+                            <li class="flex items-start gap-2 font-noto-serif text-[14px] font-normal"
+                                style="color: rgba(0, 0, 0, 0.60);"><img src="./images/check.svg" alt="check"
+                                    class="w-4 h-4 flex-shrink-0" /> Priority access at high traffic times</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <p class="font-noto-serif text-[18px] tracking-[0.7px]" style="color: rgba(0, 0, 0, 0.60);">
+                    Prices shown do not include applicable tax.
+                    <a href="#usage-limits" class="text-[#2D0F00] underline underline-offset-[auto] decoration-solid"
+                        style="text-decoration-skip-ink: none;">*Usage limits apply.</a>
+                </p>
+            </div>
+
+            <!-- Divider Section -->
+            <div
+                class="flex flex-col items-center gap-[64px] self-stretch md:mt-20 py-[80px] border-t border-b border-black/10">
+                <section class="  bg-[#fff8f5]">
+                    <div class="container mx-auto px-4 max-w-[973px]">
+                        <!-- Main Headline -->
+                        <div class="text-center mb-12">
+                            <h2 class="text-3xl md:text-5xl font-medium text-[#000000] mb-4">Can you guarantee that</h2>
+                            <h2 class="text-3xl md:text-5xl font-medium text-[#000000]">you are not training on our data?
+                            </h2>
+                        </div>
+
+                        <!-- Flex Layout for Questions and Accordion -->
+                        <div class="flex flex-col md:flex-row items-start justify-center gap-8 md:gap-16 max-h-[475px]">
+                            <!-- Left Column (Questions and Button) -->
+                            <div class="w-full md:w-[220px] flex-shrink-0">
+                                <h3 class="text-2xl font-medium text-[text-[#000000]] mb-6">Still have questions?</h3>
+                                <p class="text-[#00000099] mb-8">Reach out to our founders anytime.</p>
+                                <a href="#"
+                                    class="inline-block bg-[#FDC7AF] s text-[#2D0F00] px-6 py-3 rounded-full font-semibold hover:bg-orange-200 transition duration-300">Let's
+                                    talk →</a>
+                            </div>
+
+                            <!-- Right Column (Accordion) -->
+                            <div class="w-full md:w-[772px] flex-grow">
+                                <div class="space-y-6 font-noto-serif">
+                                    <div class="accordion-item border-b border-gray-200 cursor-pointer">
+                                        <div
+                                            class="flex justify-between items-center py-0 transition-all duration-300  rounded-lg">
+                                            <span class="text-lg font-medium text-[#00000099]">What workflows can I
+                                                automate with AI?</span>
+                                            <span
+                                                class=" text-base transform transition-transform duration-300"><img
+                                                    src="./images/arrow-down.svg" /></span>
+                                        </div>
+                                        <div
+                                            class="accordion-content mt-2 text-[#00000099] text-sm overflow-hidden max-h-0 transition-max-height duration-300">
+                                            <p class="pt-4 pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item border-b border-gray-200 cursor-pointer">
+                                        <div
+                                            class="flex justify-between items-center py-0 transition-all duration-300  rounded-lg">
+                                            <span class="text-lg font-medium text-[#00000099]">Why not use existing
+                                                automation platforms?</span>
+                                            <span
+                                                class=" text-base transform transition-transform duration-300"><img
+                                                    src="./images/arrow-down.svg" /></span>
+                                        </div>
+                                        <div
+                                            class="accordion-content mt-2 text-[#00000099] text-sm overflow-hidden max-h-0 transition-max-height duration-300">
+                                            <p class="pt-4 pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item border-b border-gray-200 cursor-pointer">
+                                        <div
+                                            class="flex justify-between items-center py-0 transition-all duration-300 rounded-lg">
+                                            <span class="text-lg font-medium text-[#00000099]">Is it free?</span>
+                                            <span
+                                                class=" text-base transform transition-transform duration-300"><img
+                                                    src="./images/arrow-down.svg" /></span>
+                                        </div>
+                                        <div
+                                            class="accordion-content mt-2 text-[#00000099] text-sm overflow-hidden max-h-0 transition-max-height duration-300">
+                                            <p class="pt-4 pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item border-b border-gray-200 cursor-pointer">
+                                        <div
+                                            class="flex justify-between items-center py-0 transition-all duration-300 rounded-lg">
+                                            <span class="text-lg font-medium text-[#00000099]">How do I get started?</span>
+                                            <span
+                                                class=" text-base transform transition-transform duration-300"><img
+                                                    src="./images/arrow-down.svg" /></span>
+                                        </div>
+                                        <div
+                                            class="accordion-content mt-2 text-[#00000099] text-sm overflow-hidden max-h-0 transition-max-height duration-300">
+                                            <p class="pt-4 pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item border-b border-gray-200 cursor-pointer">
+                                        <div
+                                            class="flex justify-between items-center py-0 transition-all duration-300 rounded-lg">
+                                            <span class="text-lg font-medium text-[#00000099]">What's your policy on file
+                                                upload privacy?</span>
+                                            <span
+                                                class="text-[#00000099] text-base transform transition-transform duration-300"><img
+                                                    src="./images/arrow-down.svg" /></span>
+                                        </div>
+                                        <div
+                                            class="accordion-content mt-2 text-[#00000099] text-sm overflow-hidden max-h-0 transition-max-height duration-300">
+                                            <p class="pt-4 pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
 
 
-    <!-- CTA Section: Call to Action with headline and button, centered -->
-    <section class="bg-[#fff5f0] py-16 md:py-24">
-      <div class="container mx-auto px-4 text-center">
-          <!-- CTA Headline -->
-          <h2 class="text-4xl md:text-5xl font-medium mb-4">Pale starts now.</h2>
-          <h2 class="text-4xl md:text-5xl font-bold text-gray-400 mb-8">Your future won't wait.</h2>
-          
-          <!-- Get Started Button -->
-          <a href="#" class="bg-black px-8 py-3 rounded-full text-white font-medium hover:bg-gray-800">Get Started</a>
-      </div>
-  </section>
+
+
+        <!-- CTA Section: Call to Action with headline and button, centered -->
+        <section class=" py-16 "
+            style="background-image: url('./images/Ellipse-69.svg'); background-size: contain;background-repeat: no-repeat; background-position: center;">
+            <div class="container mx-auto px-4 text-center">
+                <!-- CTA Headline -->
+                <h2 class="text-4xl md:text-5xl font-medium mb-4">Pale starts now.</h2>
+                <h2 class="text-4xl md:text-5xl font-bold text-[#0000004D] mb-8">Your future won't wait.</h2>
+
+                <!-- Get Started Button -->
+                <a href="#" class="bg-black px-8 py-3 rounded-full text-white font-medium hover:bg-gray-800">Get
+                    Started</a>
+            </div>
+        </section>
         <!-- Rest of the content will go here -->
     </main>
 
     <!-- Include Footer -->
-    <footer class="bg-[#fff8f5]  py-10 md:py-16 font-sora">
-    <div class="max-w-7xl mx-auto px-6">
-        <!-- Top Section with Logo and Navigation -->
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <!-- Logo Section -->
-            <div class="col-span-1">
-                <img src="./logo.png" alt="Pale" class="w-[101px] h-[38px] mb-6 md:mb-0">
+    <footer class="bg-[#fff8f5] py-10 md:py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Top Section with Logo and Navigation -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Logo Section -->
+                <div class="col-span-1">
+                    <img src="./logo.svg" alt="Pale" class="w-[101px] h-[38px] mb-6 md:mb-0">
+                </div>
+
+                <!-- Products Navigation -->
+                <div class="col-span-1">
+                    <h3 class="text-[12px] font-medium uppercase mb-4 tracking-[1.2px]"
+                        style="color: rgba(38, 15, 20, 0.40); line-height: 11.4px;">PRODUCTS</h3>
+                    <ul class="space-y-3" style="font-family: 'Noto Serif'">
+                        <li><a href="#product-overview" class="block hover:underline"
+                                style="color: #000; font-size: 14.766px; line-height: 22.51px;">Product Overview</a>
+                        </li>
+                        <li><a href="#real-time-decision" class="block hover:underline"
+                                style="color: #000; font-size: 14.766px; line-height: 22.51px;">Real-Time Decision
+                                Log</a></li>
+                        <li><a href="#checks-alerts" class="block hover:underline"
+                                style="color: #000; font-size: 14.766px; line-height: 22.51px;">Checks & Alerts</a></li>
+                        <li><a href="#execution-ai" class="block hover:underline"
+                                style="color: #000; font-size: 14.766px; line-height: 22.51px;">Execution AI Agents</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Resources Navigation -->
+                <div class="col-span-1 mt-8 md:mt-0">
+                    <h3 class="text-[12px] font-medium uppercase mb-4 tracking-[1.2px]"
+                        style="color: rgba(38, 15, 20, 0.40); line-height: 11.4px;">RESOURCES</h3>
+                    <ul class="space-y-3" style="font-family: 'Noto Serif'">
+                        <li><a href="#pricing" class="block hover:underline"
+                                style="color: #000; font-size: 14.766px; line-height: 22.51px;">Pricing</a></li>
+                        <li><a href="#blog" class="block hover:underline"
+                                style="color: #000; font-size: 14.766px; line-height: 22.51px;">Blog</a></li>
+                        <li><a href="#events" class="block hover:underline"
+                                style="color: #000; font-size: 14.766px; line-height: 22.51px;">Events</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company Navigation -->
+                <div class="col-span-1 mt-8 md:mt-0">
+                    <h3 class="text-[12px] font-medium uppercase mb-4 tracking-[1.2px]"
+                        style="color: rgba(38, 15, 20, 0.40); line-height: 11.4px;">COMPANY</h3>
+                    <ul class="space-y-3" style="font-family: 'Noto Serif'">
+                        <li><a href="#why-pale" class="block hover:underline"
+                                style="color: #000; font-size: 14.766px; line-height: 22.51px;">Why Pale</a></li>
+                        <li><a href="#about" class="block hover:underline"
+                                style="color: #000; font-size: 14.766px; line-height: 22.51px;">About</a></li>
+                        <li><a href="#careers" class="block hover:underline"
+                                style="color: #000; font-size: 14.766px; line-height: 22.51px;">Careers</a></li>
+                        <li><a href="#referral" class="block hover:underline"
+                                style="color: #000; font-size: 14.766px; line-height: 22.51px;">Referral Program</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
-            <!-- Products Navigation -->
-            <div class="col-span-1">
-                <h3 class="text-sm font-semibold uppercase text-gray-500 mb-4">PRODUCTS</h3>
-                <ul class="space-y-3">
-                    <li><a href="#product-overview" class="text-gray-600 hover:text-black">Product Overview</a></li>
-                    <li><a href="#real-time-decision" class="text-gray-600 hover:text-black">Real-Time Decision Log</a></li>
-                    <li><a href="#checks-alerts" class="text-gray-600 hover:text-black">Checks & Alerts</a></li>
-                    <li><a href="#execution-ai" class="text-gray-600 hover:text-black">Execution AI Agents</a></li>
-                </ul>
-            </div>
-
-            <!-- Resources Navigation -->
-            <div class="col-span-1 mt-8 md:mt-0">
-                <h3 class="text-sm font-semibold uppercase text-gray-500 mb-4">RESOURCES</h3>
-                <ul class="space-y-3">
-                    <li><a href="#pricing" class="text-gray-600 hover:text-black">Pricing</a></li>
-                    <li><a href="#blog" class="text-gray-600 hover:text-black">Blog</a></li>
-                    <li><a href="#events" class="text-gray-600 hover:text-black">Events</a></li>
-                </ul>
-            </div>
-
-            <!-- Company Navigation -->
-            <div class="col-span-1 mt-8 md:mt-0">
-                <h3 class="text-sm font-semibold uppercase text-gray-500 mb-4">COMPANY</h3>
-                <ul class="space-y-3">
-                    <li><a href="#why-pale" class="text-gray-600 hover:text-black">Why Pale</a></li>
-                    <li><a href="#about" class="text-gray-600 hover:text-black">About</a></li>
-                    <li><a href="#careers" class="text-gray-600 hover:text-black">Careers</a></li>
-                    <li><a href="#referral" class="text-gray-600 hover:text-black">Referral Program</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Bottom Section with Copyright and Legal Links -->
-        <div class="mt-10 md:mt-16 pt-8 border-t border-gray-200">
-            <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                <p class="text-gray-500 text-sm text-center md:text-left">&copy; Pale 2025. All rights reserved.</p>
-                <div class="flex space-x-6">
-                    <a href="#privacy" class="text-gray-500 hover:text-black text-sm">Privacy Policy</a>
-                    <a href="#terms" class="text-gray-500 hover:text-black text-sm">Terms of Service</a>
+            <!-- Bottom Section with Copyright and Legal Links -->
+            <div class="mt-10 md:mt-16 pt-8 border-t border-gray-200">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <p class="text-center md:text-left"
+                        style="font-family: 'Noto Serif'; color: #000; font-size: 12.594px; line-height: 19.51px;">
+                        &copy; Pale 2025. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#privacy" class="hover:underline"
+                            style="font-family: 'Noto Serif'; color: #000; font-size: 12.594px; line-height: 19.51px;">Privacy
+                            Policy</a>
+                        <a href="#terms" class="hover:underline"
+                            style="font-family: 'Noto Serif'; color: #000; font-size: 12.594px; line-height: 19.51px;">Terms
+                            of Service</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
 
     <script>
@@ -673,8 +1337,8 @@
         });
 
 
-              // JavaScript for accordion functionality
-              document.addEventListener('DOMContentLoaded', () => {
+        // JavaScript for accordion functionality
+        document.addEventListener('DOMContentLoaded', () => {
             const accordionItems = document.querySelectorAll('.accordion-item');
             accordionItems.forEach(item => {
                 const header = item.querySelector('div:first-child');
@@ -700,50 +1364,74 @@
         });
 
 
-                 const swiper = new Swiper('#cards-swiper', {
-     slidesPerView: 1,
-     spaceBetween: 32,
-     loop: true,
-     pagination: {
-       el: '.swiper-pagination',
-       clickable: true,
-       bulletActiveClass: 'bg-black',
-       bulletClass: 'w-3 h-3 rounded-full inline-block mx-[8px] border border-black cursor-pointer text-white transition-all duration-300 swiper-pagination-bullet',
-     },
-     navigation: {
-       nextEl: '.swiper-button-next',
-       prevEl: '.swiper-button-prev',
-     },
-     breakpoints: {
-       768: { slidesPerView: 2 },
-       1024: { slidesPerView: 3 }
-     },
-     on: {
-       init: function (swiper) {
-         // Initial setup of bullets
-         const bullets = document.querySelectorAll('.swiper-pagination-bullet');
-         bullets.forEach((bullet, index) => {
-           if (index === 0) {
-             bullet.style.backgroundColor = 'black';
-           } else {
-             bullet.style.backgroundColor = 'transparent';
-           }
-         });
-       },
-       slideChange: function (swiper) {
-         // Update bullets on slide change
-         const bullets = document.querySelectorAll('.swiper-pagination-bullet');
-         bullets.forEach((bullet, index) => {
-           if (index === swiper.realIndex) {
-             bullet.style.backgroundColor = 'black';
-           } else {
-             bullet.style.backgroundColor = 'transparent';
-           }
-         });
-       }
-     }
-   });
+        // Initialize Swiper
+        document.addEventListener('DOMContentLoaded', function () {
+            const swiper = new Swiper('#cards-swiper', {
+                slidesPerView: 1,
+                spaceBetween: 32,
+                loop: true,
+                speed: 500,
+                grabCursor: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                    bulletActiveClass: 'bg-black',
+                    bulletClass: 'w-3 h-3 rounded-full inline-block mx-[8px] border border-black cursor-pointer text-white transition-all duration-300 swiper-pagination-bullet',
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                    disabledClass: 'opacity-50 cursor-not-allowed',
+                    enabled: true,
+                },
+                breakpoints: {
+                    768: { slidesPerView: 2 },
+                    1024: { slidesPerView: 3 }
+                },
+                on: {
+                    init: function (swiper) {
+                        // Initial setup of bullets and active slide
+                        const bullets = document.querySelectorAll('.swiper-pagination-bullet');
+                        const articles = document.querySelectorAll('.slide-article');
+                        bullets.forEach((bullet, index) => {
+                            if (index === 0) {
+                                bullet.style.backgroundColor = 'black';
+                                articles[index].style.borderColor = 'black';
+                                articles[index].style.boxShadow = '0 0 0 4px rgba(0,0,0,1)';
+                            } else {
+                                bullet.style.backgroundColor = 'transparent';
+                            }
+                        });
+                    },
+                    slideChange: function (swiper) {
+                        // Update bullets and active slide on change
+                        const bullets = document.querySelectorAll('.swiper-pagination-bullet');
+                        const articles = document.querySelectorAll('.slide-article');
+                        bullets.forEach((bullet, index) => {
+                            if (index === swiper.realIndex) {
+                                bullet.style.backgroundColor = 'black';
+                                articles[index].style.borderColor = 'black';
+                                articles[index].style.boxShadow = '0 0 0 4px rgba(0,0,0,1)';
+                            } else {
+                                bullet.style.backgroundColor = 'transparent';
+                                articles[index].style.borderColor = '#F5B899';
+                                articles[index].style.boxShadow = '0 0 0 4px rgba(245,184,153,1)';
+                            }
+                        });
+                    }
+                }
+            });
+
+            // Add click event listeners to navigation buttons
+            document.querySelector('.swiper-button-next').addEventListener('click', () => {
+                swiper.slideNext();
+            });
+            document.querySelector('.swiper-button-prev').addEventListener('click', () => {
+                swiper.slidePrev();
+            });
+        });
 
     </script>
 </body>
+
 </html>
